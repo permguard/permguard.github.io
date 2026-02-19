@@ -2,7 +2,7 @@
 id: developers-intro-to-permguard
 title: Intro to Permguard
 sidebar_label: Intro to Permguard
-sidebar_position: 1001
+sidebar_position: 10101
 description: This section provides an introduction to Permguard.
 ---
 

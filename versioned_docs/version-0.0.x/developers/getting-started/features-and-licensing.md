@@ -2,7 +2,7 @@
 id: developers-features-and-licensing
 title: Features & Licensing
 sidebar_label: Features & Licensing
-sidebar_position: 1008
+sidebar_position: 10108
 description: This section provides an overview of Permguard's features and licensing.
 ---
 

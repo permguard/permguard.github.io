@@ -1,16 +1,16 @@
 ---
-id: developers-run-authz-server
-title: Run the AuthZServer
-sidebar_label: Run the AuthZServer
-sidebar_position: 1003
-description: This section provides instructions for running the AuthZServer.
+id: developers-run-server
+title: Run the Server
+sidebar_label: Run the Server
+sidebar_position: 10103
+description: This section provides instructions for running the Server.
 ---
 
-The **`AuthZServer`** can operate as both the `control-plane` and the `data-plane` for `Permguard`.
+The **`Server`** can operate as both the `control-plane` and the `data-plane` for `Permguard`.
 
 In its simplest form, it runs in an `all-in-one` configuration, where a single instance acts as both the `control-plane` and the `data-plane`:
 
-- When acting as the `control-plane`, the `AuthZServer` manages policies, trust configuration, and governance rules, providing a unified interface for defining and distributing authorization intent, or
+- When acting as the `control-plane`, the `Server` manages policies, trust configuration, and governance rules, providing a unified interface for defining and distributing authorization intent, or
 - When acting as the `data-plane`, it evaluates incoming authorization requests and enforces the resulting decisions.
 
 The default container image runs in `all-in-one` mode, making it ideal for development, testing, or simple environments.
@@ -30,7 +30,7 @@ docker run --rm -it \
 
 When running `Permguard` from its `Docker image`, configuration options are supplied through environment variables, allowing runtime behavior to be customized without modifying the image itself.
 
-The full list of available configuration options is documented in the [AuthZServer Profiles](/docs/0.0.x/devops/authz-server/authzserver-profiles/).
+The full list of available configuration options is documented in the [Server Profiles](/docs/0.0.x/devops/server/server-profiles/).
 
 Example with debugging enabled:
 
@@ -44,9 +44,9 @@ docker run --rm -it \
   permguard/all-in-one:latest
 ```
 
-When `PERMGUARD_DEBUG` is set to `TRUE`, the `AuthZServer` operates in debug mode, providing verbose logging and diagnostic output suitable for development and troubleshooting scenarios.
+When `PERMGUARD_DEBUG` is set to `TRUE`, the `Server` operates in debug mode, providing verbose logging and diagnostic output suitable for development and troubleshooting scenarios.
 
-It is also possible to access the local SQLite database used by the `AuthZServer` by mounting a host directory into the container.
+It is also possible to access the local SQLite database used by the `Server` by mounting a host directory into the container.
 
 This allows direct inspection or interaction with the database files from the host system.
 

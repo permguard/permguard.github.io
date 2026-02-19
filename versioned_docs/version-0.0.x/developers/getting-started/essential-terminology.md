@@ -2,7 +2,7 @@
 id: developers-essential-terminology
 title: Essential Terminology
 sidebar_label: Essential Terminology
-sidebar_position: 1007
+sidebar_position: 10107
 description: This section provides definitions for key terms used throughout the Permguard documentation.
 ---
 

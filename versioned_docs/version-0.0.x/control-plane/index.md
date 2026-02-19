@@ -2,7 +2,7 @@
 id: control-plane
 title: Control Plane
 sidebar_label: Control Plane
-sidebar_position: 3
+sidebar_position: 30000
 description: Control Plane
 ---
 
