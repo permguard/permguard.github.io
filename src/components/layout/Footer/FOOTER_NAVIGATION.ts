@@ -38,7 +38,7 @@ export const FOOTER_NAVIGATION = [
       },
       {
         title: "SDKs",
-        href: "/developoment/sdks",
+        href: "/data-plane/sdks",
       },
     ],
   },
