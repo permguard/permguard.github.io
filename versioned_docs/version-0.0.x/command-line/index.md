@@ -1,7 +1,7 @@
 ---
 id: command-line
 title: Use the Permguard CLI
-sidebar_label: Command-Line
+sidebar_label: Use the Permguard CLI
 sidebar_position: 1
 description: Command-Line interface reference for version 0.0.x
 ---
