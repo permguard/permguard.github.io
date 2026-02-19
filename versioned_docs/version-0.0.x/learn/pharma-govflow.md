@@ -369,7 +369,7 @@ type blob, size 397, oname branch-administration
 It is recommended to explore the [Policy as Code](/data-plane/policy-as-code/dataplane-policy-languages) section to learn more about the policy store and the policy language.
 
 :::info
-Plese refer to the [Deployment](/developers/deployment/server) section for more information about configuration and deployment.
+Plese refer to the [Deployment](/developers/deployment/deployment-server) section for more information about configuration and deployment.
 :::
 
 Finally, it is worth considering how to deploy the Server.

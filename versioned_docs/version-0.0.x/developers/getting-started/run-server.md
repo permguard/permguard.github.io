@@ -30,7 +30,7 @@ docker run --rm -it \
 
 When running `Permguard` from its `Docker image`, configuration options are supplied through environment variables, allowing runtime behavior to be customized without modifying the image itself.
 
-The full list of available configuration options is documented in the [Server Profiles](/developers/deployment/server-profiles).
+The full list of available configuration options is documented in the [Server Profiles](/developers/deployment/deployment-server-profiles).
 
 Example with debugging enabled:
 

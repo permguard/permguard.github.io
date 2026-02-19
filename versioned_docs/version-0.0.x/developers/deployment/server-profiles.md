@@ -9,7 +9,7 @@ description: Overview of the Server Profiles in the Permguard project.
 The `Server` binary can be run in different distributions, each providing its own configuration profile.
 
 :::note
-Services can be configured using either environment variables or [configuration options](/developers/deployment/server-profiles). Each CLI option has a corresponding environment variable named `PERMGUARD_<OPTION_NAME>`. For example, the `--debug` option maps to the `PERMGUARD_DEBUG` environment variable.
+Services can be configured using either environment variables or [configuration options](/developers/deployment/deployment-server-profiles). Each CLI option has a corresponding environment variable named `PERMGUARD_<OPTION_NAME>`. For example, the `--debug` option maps to the `PERMGUARD_DEBUG` environment variable.
 :::
 
 ## Servers
