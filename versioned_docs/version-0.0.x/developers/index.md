@@ -6,6 +6,4 @@ sidebar_position: 1
 description: Developers
 ---
 
-## Developers 0.0.x
-
-Developers.
+This section is dedicated to developers using Permguard.
