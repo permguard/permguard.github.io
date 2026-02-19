@@ -1,13 +1,13 @@
 export const FOOTER_NAVIGATION = [
   {
-    title: "Project",
+    title: "Open Source",
     links: [
       {
         title: "Organization",
         href: "https://github.com/permguard",
       },
       {
-        title: "GitHub",
+        title: "Project",
         href: "https://github.com/permguard/permguard",
       }
     ],
