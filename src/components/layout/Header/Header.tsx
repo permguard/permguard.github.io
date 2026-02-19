@@ -18,9 +18,9 @@ export const Header = () => {
       />
 
       {/* Logo */}
-      <Link href="/" className="z-[500]">
+      <Link href="/" className="z-[500] items-center flex justify-center">
         <img
-          className="w-[170px] z-150"
+          className="w-[170px]! h-[45px]! z-150"
           src="/images/header_logo.svg"
           alt="Permguard Enterprise"
         />

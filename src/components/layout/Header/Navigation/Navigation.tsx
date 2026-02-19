@@ -47,7 +47,7 @@ export const NAVIGATION: INavigation = [
 export const Navigation = () => {
   return (
     <nav role="navigation">
-      <ul className="gap-4 lg:gap-8 xl:gap-12 hidden min-[980px]:flex">
+      <ul className="gap-4 lg:gap-7 xl:gap-12 hidden min-[980px]:flex">
         {NAVIGATION.map((el) => (
           <NavLink key={el.name} {...el} />
         ))}

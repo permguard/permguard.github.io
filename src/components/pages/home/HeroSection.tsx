@@ -29,7 +29,7 @@ export const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Link
-              href="/community"
+              href="/"
               className="rounded-full bg-[#cc34df] text-white text-lg font-medium py-2.5 px-6 text-center hover:bg-[#9c28a7]"
             >
               Get Started
