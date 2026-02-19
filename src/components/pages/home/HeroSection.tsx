@@ -7,7 +7,7 @@ export const HeroSection = () => {
       <div className="flex flex-col lg:flex-row items-center">
         <div className="flex flex-col items-start w-full lg:w-1/2">
           <h1
-            className="ml-auto! mr-auto! sm:m-0! sm:mb-6!  z-20 flex gap-3 mb-6 max-w-[350px] xl:text-[56px]! font-medium leading-[1.2] tracking-[2.3px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent
+            className="ml-auto! mr-auto! sm:m-0! sm:mb-6!  z-20 flex gap-3 mb-6 max-w-87.5 xl:text-[56px]! font-medium leading-[1.2] tracking-[2.3px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent
                      lg:text-[46px]
                      sm:text-[42px]
                      text-[28px] sm:tracking-[1px] sm:mx-auto sm:text-center"
