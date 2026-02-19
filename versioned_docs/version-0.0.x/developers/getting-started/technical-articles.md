@@ -2,7 +2,7 @@
 id: developers-technical-articles
 title: Technical Articles
 sidebar_label: Technical Articles
-sidebar_position: 5
+sidebar_position: 10105
 description: This section provides a collection of technical articles and videos about Permguard.
 ---
 

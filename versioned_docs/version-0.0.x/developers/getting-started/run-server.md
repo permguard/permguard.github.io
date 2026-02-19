@@ -1,5 +1,5 @@
 ---
-id: developers-run-server
+id: developers-run-authz-server
 title: Run the Server
 sidebar_label: Run the Server
 sidebar_position: 10103

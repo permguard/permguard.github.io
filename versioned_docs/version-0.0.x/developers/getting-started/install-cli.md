@@ -2,7 +2,7 @@
 id: developers-install-cli
 title: Get the CLI
 sidebar_label: Get the CLI
-sidebar_position: 2
+sidebar_position: 10102
 description: This section provides instructions for installing the Permguard CLI.
 ---
 
