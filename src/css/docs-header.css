@@ -1,0 +1,141 @@
+:root,
+:host {
+  --ifm-navbar-height: 80px;
+  --ifm-navbar-padding-vertical: 0px !important;
+  --ifm-navbar-padding-horizontal: 70px;
+}
+
+.navbar__title {
+  font-weight: 300 !important;
+  font-size: 24px;
+  letter-spacing: 0.39px;
+  margin-left: -8px;
+  color: white !important;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar__brand {
+  margin-right: auto;
+}
+
+.navbar__link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  transition: color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.navbar__link:hover {
+  color: #d946ef !important;
+}
+
+.navbar__link:last-child {
+  margin-right: 9%;
+}
+
+.navbar__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+}
+
+.navbar__logo {
+  margin-top: -6px;
+  height: 45px;
+  width: 170px;
+}
+
+.navbar__logo img {
+  height: 45px;
+  width: 170px;
+}
+
+.navbar__item {
+  font-size: var(--text-sm);
+  line-height: calc(var(--spacing) * 6);
+  font-weight: 600;
+}
+
+.theme-layout-navbar-left > .navbar__item {
+  --ifm-navbar-item-padding-horizontal: 30px;
+  margin-top: -5px;
+}
+
+.header-github-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -4px;
+}
+
+.header-github-link svg {
+  height: 29px !important;
+  width: auto !important;
+  color: var(--color-slate-400) !important;
+}
+
+.header-github-link svg:hover {
+  color: var(--color-slate-300) !important;
+}
+
+.navbar__toggle {
+  margin-right: 15px;
+}
+
+@media (max-width: 1280px) {
+  .theme-layout-navbar-left > .navbar__item {
+    --ifm-navbar-item-padding-horizontal: 11px;
+  }
+
+  .navbar__link:last-child {
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 997px) {
+  .navbar {
+    backdrop-filter: blur(8px) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+@media (max-width: 996px) {
+  .header-github-link {
+    margin-right: 48px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root,
+  :host {
+    --ifm-navbar-padding-horizontal: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root,
+  :host {
+    --ifm-navbar-padding-horizontal: 40px;
+  }
+}
+
+.DocSearch-Button-Placeholder {
+  display: none;
+}
+
+.DocSearch-Button-Keys {
+  display: none;
+}
+
+.navbar__items--right .navbar__link--active {
+  color: white;
+}

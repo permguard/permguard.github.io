@@ -1,4 +1,6 @@
 @import "./fonts/inter.css";
+@import "./docs-header.css";
+@import "./internal-docs.css";
 
 html,
 * {
@@ -105,8 +107,16 @@ pre code.hljs {
 }
 
 .tooltip-container {
+  height: 24px;
+  width: 24px;
   position: relative;
   display: inline-block;
+}
+
+.tooltip-container a {
+  height: 24px;
+  width: 24px;
+  display: block;
 }
 
 .tooltip-text {
@@ -144,14 +154,6 @@ pre code.hljs {
 
 :root {
   --ifm-color-primary: #d53ec6;
-}
-
-.navbar__brand {
-  margin-right: auto;
-}
-
-.navbar__link:last-child {
-  margin-right: auto;
 }
 
 /* Version banner styling */
