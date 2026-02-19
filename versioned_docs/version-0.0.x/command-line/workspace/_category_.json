@@ -1,4 +1,7 @@
 {
-  "label": "Workspace",
-  "position": 20200
+    "label": "Workspace",
+    "position": 20200,
+    "link": {
+        "type": "generated-index"
+    }
 }

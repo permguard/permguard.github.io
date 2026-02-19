@@ -1,4 +1,7 @@
 {
-  "label": "AuthZ",
-  "position": 20100
+    "label": "AuthZ",
+    "position": 20100,
+    "link": {
+        "type": "generated-index"
+    }
 }

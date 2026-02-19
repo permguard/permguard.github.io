@@ -1,4 +1,7 @@
 {
   "label": "Permissions",
-  "position": 10220
+  "position": 10220,
+  "link": {
+    "type": "generated-index"
+  }
 }

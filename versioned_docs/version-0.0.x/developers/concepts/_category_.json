@@ -1,4 +1,7 @@
 {
   "label": "Concepts",
-  "position": 10200
+  "position": 10200,
+  "link": {
+    "type": "generated-index"
+  }
 }
