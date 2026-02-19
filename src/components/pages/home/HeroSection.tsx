@@ -24,7 +24,7 @@ export const HeroSection = () => {
 
           <SectionDescription
             className="sm:pr-4 xl:pr-0 lg:max-w-[605px] mb-4 sm:mb-8 !tracking-tight"
-            text="Explore the open-source Permguard documentation. Check out the GitHub repository and start integrating zero-trust authorization into your applications."
+            text="Authorization, reimagined. Authority continuity and policy-as-code in one open-source engine, for humans, AI agents, and every workload in between. Zero-trust by construction, not configuration."
           />
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

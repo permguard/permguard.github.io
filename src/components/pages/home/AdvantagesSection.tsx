@@ -3,24 +3,24 @@ import { SectionTitle } from "../../shared/SectionTitle";
 
 const advantages = [
   {
-    icon: "/images/home/code.svg",
-    title: "Open and Free for Everyone",
-    text: "Access the full power of Permguard Community under the Apache 2.0 license, no restrictions, no hidden costs.",
+    icon: "/images/home/integrate.svg",
+    title: "Provenance",
+    text: "Every execution is traceable from origin to end. The causal chain is unbroken and auditable. If it breaks, execution stops.",
   },
   {
     icon: "/images/home/community.svg",
-    title: "Join the Community",
-    text: "Collaborate with developers worldwide. Share ideas, report issues, and help shape the future of zero-trust authorization.",
+    title: "Identity",
+    text: "The origin principal is immutable. It is the source of authority. It cannot change throughout the chain.",
   },
   {
     icon: "/images/home/integrate.svg",
-    title: "Integrate Without Lock-In",
-    text: "Easily integrate into your stack with no vendor lock-in. You control the deployment, the data, and the roadmap.",
+    title: "Continuity",
+    text: "Authority is proven at every step. It can only shrink, never expand. Proof of Continuity replaces Proof of Possession.",
   },
   {
     icon: "/images/home/build.svg",
-    title: "Build and Extend on Your Own",
-    text: "You have everything you need to extend, customize, and innovate independently, full source code, clear APIs, and transparent.",
+    title: "Governance",
+    text: "Governance is expressed as code, versioned, testable, and enforceable. Policy restricts what continuity allows — it never creates new authority.",
   },
 ];
 
@@ -32,13 +32,12 @@ const titleGradient =
 
 export const AdvantagesSection = () => (
   <section className="pt-8 pb-2 md:pb-16 flex flex-col">
-    <SectionTitle className="mx-auto" title="Open And Free For Everyone" />
+    <SectionTitle className="mx-auto" title="A FORMAL AUTHORITY MODEL" />
 
     <h3
       className={`text-[24px] leading-[1.4] sm:text-[36px] md:text-[46px] lg:text-[56px] font-medium sm:leading-tight tracking-[2.3px] text-center mx-auto sm:px-2 ${titleGradient}`}
     >
-      Access the full power of Permguard Community under the Apache 2.0 license
-      — no restrictions, no hidden costs.
+      Model authority as continuity. Enforce governance with policy-as-code. Start today.
     </h3>
 
     <div className="mt-6 rounded-3xl border border-white/10 bg-[#1e1f23]/80 backdrop-blur-xl p-6 md:p-10 md:pb-15 lg:pt-16 lg:px-15 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-9 md:gap-y-16 justify-items-center">
