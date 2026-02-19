@@ -48,12 +48,12 @@ export const HeroSection = () => {
           <img
             src="/images/home/hero.png"
             className="hidden lg:block ml-[25%] xl:ml-[18%] mt-[75px] xl:mt-[50px] scale-[2.05] max-w-full w-[615px]"
-            alt="Permguard Community"
+            alt="Permguard Docs"
           />
           <img
             src="/images/home/hero_mobile.png"
             className="block lg:hidden max-w-[700px] w-full mt-[52px] scale-[1.8] mx-auto"
-            alt="Permguard Community"
+            alt="Permguard Docs"
           />
         </div>
       </div>
