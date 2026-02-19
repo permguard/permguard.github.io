@@ -32,15 +32,15 @@ The output from your current version of Permguard may differ from the example pr
 The `permguard clone` command allows you to clone a remote ledger locally.
 
 ```bash
-permguard clone localhost/273165098782/pharmaauthzflow
+permguard clone localhost/273165098782/pharmagovflow
 ```
 
 output:
 
 ```bash
-Initialized empty permguard ledger in 'pharmaauthzflow'.
+Initialized empty permguard ledger in 'pharmagovflow'.
 Remote origin has been added.
-Ledger pharmaauthzflow has been added.
+Ledger pharmagovflow has been added.
 ```
 
 <details>
@@ -49,7 +49,7 @@ Ledger pharmaauthzflow has been added.
   </summary>
 
 ```bash
-permguard clone localhost/273165098782/pharmaauthzflow --output json
+permguard clone localhost/273165098782/pharmagovflow --output json
 ```
 
 output:

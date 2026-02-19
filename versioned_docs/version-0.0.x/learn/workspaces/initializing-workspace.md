@@ -30,7 +30,7 @@ A **Permguard workspace** contains the following files:
 When starting a new project, the first step is to **create a zone**.
 
 ```bash
-permguard zones create --name pharmaauthzflow-dev --output json
+permguard zones create --name pharmagovflow-dev --output json
 ```
 
 Below is the output of the command.
@@ -42,7 +42,7 @@ Below is the output of the command.
       "zone_id": 273165098782,
       "created_at": "2024-08-25T14:07:59.634Z",
       "updated_at": "2024-08-25T14:07:59.634Z",
-      "name": "pharmaauthzflow-dev"
+      "name": "pharmagovflow-dev"
     }
   ]
 }
@@ -51,7 +51,7 @@ Below is the output of the command.
 Next, create a ledger.
 
 ```bash
-permguard authz ledgers create --zone-id 273165098782  --name pharmaauthzflow --output json
+permguard authz ledgers create --zone-id 273165098782  --name pharmagovflow --output json
 ```
 
 Below is the output of the command.
@@ -64,7 +64,7 @@ Below is the output of the command.
       "created_at": "2024-08-25T14:50:38.003Z",
       "updated_at": "2024-08-25T14:50:38.003Z",
       "zone_id": 273165098782,
-      "name": "pharmaauthzflow"
+      "name": "pharmagovflow"
     }
   ]
 }
@@ -75,7 +75,7 @@ Finally, initialize the workspace and associate it with a Permguard `remote` ser
 ```bash
  permguard init
  permguard remote add origin localhost
- permguard checkout origin/273165098782/pharmaauthzflow
+ permguard checkout origin/273165098782/pharmagovflow
 ```
 
 ## Clone an existing ledger
@@ -85,5 +85,5 @@ In advanced cases, a **Permguard ledger** may already exist, and it may be neces
 To do this, simply **clone** the existing **Permguard ledger**.
 
 ```bash
-permguard clone localhost/273165098782/pharmaauthzflow
+permguard clone localhost/273165098782/pharmagovflow
 ```

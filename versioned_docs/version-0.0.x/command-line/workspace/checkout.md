@@ -30,13 +30,13 @@ The output from your current version of Permguard may differ from the example pr
 The `permguard checkout` command allows you to check out a remote ledger locally.
 
 ```bash
-permguard checkout origin/273165098782/pharmaauthzflow
+permguard checkout origin/273165098782/pharmagovflow
 ```
 
 output:
 
 ```bash
-Ledger pharmaauthzflow has been added.
+Ledger pharmagovflow has been added.
 ```
 
 <details>
@@ -45,7 +45,7 @@ Ledger pharmaauthzflow has been added.
   </summary>
 
 ```bash
-permguard checkout origin/273165098782/pharmaauthzflow --output json
+permguard checkout origin/273165098782/pharmagovflow --output json
 ```
 
 output:

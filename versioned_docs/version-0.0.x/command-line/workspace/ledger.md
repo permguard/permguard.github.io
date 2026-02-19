@@ -38,7 +38,7 @@ output:
 ```bash
 Your workspace configured ledgers:
 
-  - *origin/273165098782/pharmaauthzflow
+  - *origin/273165098782/pharmagovflow
 
 ```
 
