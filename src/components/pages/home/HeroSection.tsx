@@ -18,7 +18,7 @@ export const HeroSection = () => {
                      sm:text-[40px]!
                      text-[24px]! sm:rounded-[12px]"
             >
-              Community
+              DOCS
             </span>
           </h1>
 

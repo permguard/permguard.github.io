@@ -8,16 +8,15 @@ const config: Config = {
   title: "Permguard",
   tagline:
     "Rethinking Authorization Beyond the Token. From Static Claims to Runtime Trust.",
-  url: "https://www.permguard.com/",
+  url: "https://docs.permguard.com/",
   baseUrl: "/",
   favicon: "img/favicon.ico",
 
   themeConfig: {
     algolia: {
-      appId: "YOUR_APP_ID",
-      apiKey: "YOUR_SEARCH_API_KEY",
-
-      indexName: "YOUR_INDEX_NAME",
+      appId: "6F99UF9PLR",
+      apiKey: "48b3cbd3b9eddd08519caf11932ffb22",
+      indexName: "docs_permguard_com_6f99uf9plr_articles",
       contextualSearch: true,
     },
     metadata: [
