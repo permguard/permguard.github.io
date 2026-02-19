@@ -21,7 +21,7 @@ Always verify which edition applies before using or redistributing Permguard com
 
 ## Design Principles and Objectives
 
-`Permguard` aims not only to modernize authorization, but to provide an `AuthZServer` that enables a standardized trust protocol built on Zero Trust principles and on the act-on-behalf-of model.
+`Permguard` aims not only to modernize authorization, but to provide an `Server` that enables a standardized trust protocol built on Zero Trust principles and on the act-on-behalf-of model.
 
 The system is language-agnostic: policies and trust logic are not tied to any specific programming language, allowing each component to use the language that best expresses its domain while remaining fully interoperable.
 

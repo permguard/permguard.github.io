@@ -2,7 +2,7 @@
 id: legal-licenses-third-party-technologies
 title: Third-Party Technologies
 sidebar_label: Third-Party Technologies
-sidebar_position: 10301
+sidebar_position: 10401
 description: Overview of third-party technologies used in the Permguard project.
 ---
 

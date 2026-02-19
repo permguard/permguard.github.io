@@ -8,7 +8,7 @@ description: This section provides instructions for using the AuthZClient in the
 
 The application, acting as a Policy Enforcement Point (PEP), enforces policies defined by the Policy Decision Point (PDP). The Permguard Java SDK facilitates communication with the Permguard PDP.
 
-This communication occurs through the `AuthZClient`, a component that provides a straightforward interface for interacting with the Permguard `AuthZServer`.
+This communication occurs through the `AuthZClient`, a component that provides a straightforward interface for interacting with the Permguard `Server`.
 
 ## The Basic Structure of an Authorization Request
 

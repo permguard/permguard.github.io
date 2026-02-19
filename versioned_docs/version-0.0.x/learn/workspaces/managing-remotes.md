@@ -6,7 +6,7 @@ sidebar_position: 60101
 description: Learn about managing remotes in a Permguard workspace
 ---
 
-A recommended **Permguard** best practice is to run a **dedicated AuthZServer** for each environment, such as:
+A recommended **Permguard** best practice is to run a **dedicated Server** for each environment, such as:
 
 - **Development**
 - **Staging**
@@ -14,9 +14,9 @@ A recommended **Permguard** best practice is to run a **dedicated AuthZServer** 
 
 This separation ensures a secure and isolated trust model aligned with the specific needs of each environment.
 
-## Managing multiple AuthZServers
+## Managing multiple Servers
 
-When handling multiple **AuthZServers** and provisioning configurations, it is crucial to correctly configure **remote connections**.
+When handling multiple **Servers** and provisioning configurations, it is crucial to correctly configure **remote connections**.
 This setup enables smooth communication and coordination between different **Permguard instances**.
 
 To add a new **remote**, use the following **remote command**:
@@ -31,7 +31,7 @@ and it can be removed using the remote command:
  permguard remote remove origin
 ```
 
-If the AuthZServer ports differ from the default values (`zap`:`9091` and `pap`:`9092`), you can specify the custom port numbers using the `--zap` and `--pap` flag:
+If the Server ports differ from the default values (`zap`:`9091` and `pap`:`9092`), you can specify the custom port numbers using the `--zap` and `--pap` flag:
 
 ```bash
  permguard remote add origin localhost --zap 9091 --pap 9092

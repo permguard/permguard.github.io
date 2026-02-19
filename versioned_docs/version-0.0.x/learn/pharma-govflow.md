@@ -27,7 +27,7 @@ In real-world environments, these domains would likely be further segmented, but
 Therefore, each domain requires its own Permguard `zone` and a `root` ledger for managing policies.
 
 :::info
-Before proceeding, ensure the [CLI is installed](/docs/0.0.x/getting-started/get-the-cli/) and the [AuthZServer is running](/docs/0.0.x/getting-started/run-the-authzserver/).
+Before proceeding, ensure the [CLI is installed](/docs/0.0.x/getting-started/get-the-cli/) and the [Server is running](/docs/0.0.x/getting-started/run-the-server/).
 :::
 
 ---
@@ -372,4 +372,4 @@ It is recommended to explore the [Policy as Code](/docs/0.0.x/policy-as-code/pol
 Plese refer to the [DevOps](/docs/0.0.x/devops/authz-server/authz-server/) section for more information about configuration and deployment.
 :::
 
-Finally, it is worth considering how to deploy the AuthZServer.
+Finally, it is worth considering how to deploy the Server.
