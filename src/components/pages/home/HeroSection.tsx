@@ -3,7 +3,7 @@ import { SectionDescription } from "@site/src/components/shared/SectionDescripti
 
 export const HeroSection = () => {
   return (
-    <section className="relative pt-16 sm:pt-[95px] pb-[135px]">
+    <section className="relative py-16 sm:pt-[95px] sm:pb-30">
       <div className="flex flex-col lg:flex-row items-center">
         <div className="flex flex-col items-start w-full lg:w-1/2">
           <h1
@@ -47,12 +47,12 @@ export const HeroSection = () => {
         <div className="z-0 w-full lg:w-1/2">
           <img
             src="/images/home/hero.png"
-            className="hidden lg:block ml-[25%] xl:ml-[18%] mt-[75px] xl:mt-[50px] scale-[2.05] max-w-full w-[615px]"
+            className="hidden lg:block ml-[10%] xl:ml-[4%]  scale-[1.8] max-w-full w-[615px]"
             alt="Permguard Docs"
           />
           <img
             src="/images/home/hero_mobile.png"
-            className="block lg:hidden max-w-[700px] w-full mt-[52px] scale-[1.8] mx-auto"
+            className="block lg:hidden max-w-[500px] w-full mt-[58px] scale-[1.8] mx-auto"
             alt="Permguard Docs"
           />
         </div>
