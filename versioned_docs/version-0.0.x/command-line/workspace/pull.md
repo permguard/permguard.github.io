@@ -2,7 +2,7 @@
 id: command-line-workspace-pull
 title: Pull
 sidebar_label: Pull
-sidebar_position: 306
+sidebar_position: 20206
 description: Command reference for the `pull` command of the Permguard CLI.
 ---
 

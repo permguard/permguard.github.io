@@ -2,7 +2,7 @@
 id: command-line-workspace-checkout
 title: Checkout
 sidebar_label: Checkout
-sidebar_position: 303
+sidebar_position: 20203
 description: Command reference for the `checkout` command of the Permguard CLI.
 ---
 

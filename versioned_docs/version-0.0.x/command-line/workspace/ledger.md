@@ -2,7 +2,7 @@
 id: command-line-workspace-ledger
 title: Ledger
 sidebar_label: Ledger
-sidebar_position: 304
+sidebar_position: 20204
 description: Command reference for the `ledger` command of the Permguard CLI.
 ---
 

@@ -2,7 +2,7 @@
 id: command-line-zones
 title: Zones
 sidebar_label: Zones
-sidebar_position: 3
+sidebar_position: 20003
 description: Command reference for the `zones` command of the Permguard CLI.
 ---
 

@@ -2,7 +2,7 @@
 id: command-line-workspace-apply
 title: Apply
 sidebar_label: Apply
-sidebar_position: 312
+sidebar_position: 20212
 description: Command reference for the `apply` command of the Permguard CLI.
 ---
 

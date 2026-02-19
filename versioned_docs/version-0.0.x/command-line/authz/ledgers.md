@@ -2,7 +2,7 @@
 id: command-line-authz-ledgers
 title: Ledgers
 sidebar_label: Ledgers
-sidebar_position: 202
+sidebar_position: 20102
 description: Command reference for the `ledgers` command of the Permguard CLI.
 ---
 

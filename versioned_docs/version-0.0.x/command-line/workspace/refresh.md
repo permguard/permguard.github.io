@@ -2,7 +2,7 @@
 id: command-line-workspace-refresh
 title: Refresh
 sidebar_label: Refresh
-sidebar_position: 309
+sidebar_position: 20209
 description: Command reference for the `refresh` command of the Permguard CLI.
 ---
 

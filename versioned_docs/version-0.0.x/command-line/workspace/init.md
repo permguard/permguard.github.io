@@ -2,7 +2,7 @@
 id: command-line-workspace-init
 title: Init
 sidebar_label: Init
-sidebar_position: 301
+sidebar_position: 20201
 description: Command reference for the `ledgers` command of the Permguard CLI.
 ---
 

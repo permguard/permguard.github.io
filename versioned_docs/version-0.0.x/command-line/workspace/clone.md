@@ -2,7 +2,7 @@
 id: command-line-workspace-clone
 title: Clone
 sidebar_label: Clone
-sidebar_position: 305
+sidebar_position: 20205
 description: Command reference for the `clone` command of the Permguard CLI.
 ---
 

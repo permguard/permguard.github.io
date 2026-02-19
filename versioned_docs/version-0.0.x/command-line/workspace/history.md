@@ -2,7 +2,7 @@
 id: command-line-workspace-history
 title: History
 sidebar_label: History
-sidebar_position: 307
+sidebar_position: 20207
 description: Command reference for the `history` command of the Permguard CLI.
 ---
 

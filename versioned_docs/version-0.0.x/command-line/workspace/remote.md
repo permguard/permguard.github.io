@@ -2,7 +2,7 @@
 id: command-line-workspace-remote
 title: Remote
 sidebar_label: Remote
-sidebar_position: 302
+sidebar_position: 20202
 description: Command reference for the `remote` command of the Permguard CLI.
 ---
 

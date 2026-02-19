@@ -2,7 +2,7 @@
 id: command-line-authz-check
 title: Check
 sidebar_label: Check
-sidebar_position: 201
+sidebar_position: 20101
 description: Command reference for the `check` command of the Permguard CLI.
 ---
 

@@ -2,7 +2,7 @@
 id: command-line-workspace-plan
 title: Plan
 sidebar_label: Plan
-sidebar_position: 311
+sidebar_position: 20211
 description: Command reference for the `plan` command of the Permguard CLI.
 ---
 
