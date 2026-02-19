@@ -2,6 +2,7 @@
   "label": "Authorization API",
   "position": 40310,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "/data-plane/authorization-api"
   }
 }
