@@ -49,7 +49,7 @@ export default function DocItemLayout({ children }: Props): ReactNode {
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
-            <div className="flex flex-wrap gap-4 justify-between items-center mb-2">
+            <div className="flex flex-wrap gap-4 justify-between items-center mb-6">
               <DocBreadcrumbs />
               <DocVersionBadge />
             </div>
