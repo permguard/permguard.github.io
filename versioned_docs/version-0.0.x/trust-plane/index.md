@@ -2,7 +2,7 @@
 id: trust-plane
 title: Trust Plane
 sidebar_label: Trust Plane
-sidebar_position: 50000
+sidebar_position: 5
 description: Trust Plane
 ---
 

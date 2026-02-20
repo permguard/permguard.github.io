@@ -1,6 +1,6 @@
 {
   "label": "Policy as Code",
-  "position": 40200,
+  "position": 3,
   "link": {
     "type": "generated-index",
     "slug": "/data-plane/policy-as-code"

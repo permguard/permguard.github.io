@@ -2,7 +2,7 @@
 id: data-plane
 title: Data Plane
 sidebar_label: Data Plane
-sidebar_position: 40000
+sidebar_position: 1
 description: Data Plane
 ---
 

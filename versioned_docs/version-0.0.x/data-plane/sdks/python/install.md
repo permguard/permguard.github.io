@@ -2,7 +2,7 @@
 id: dataplane-sdks-python-install
 title: Install the Python SDK
 sidebar_label: Install the Python SDK
-sidebar_position: 40407
+sidebar_position: 1
 description: This section provides instructions for installing the Python SDK.
 ---
 

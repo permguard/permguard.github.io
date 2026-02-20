@@ -2,7 +2,7 @@
 id: learn-workspaces-managing-remotes
 title: Managing Remotes
 sidebar_label: Managing Remotes
-sidebar_position: 60101
+sidebar_position: 2
 description: Learn about managing remotes in a Permguard workspace
 ---
 

@@ -2,7 +2,7 @@
 id: command-line-config
 title: Config
 sidebar_label: Config
-sidebar_position: 20002
+sidebar_position: 2
 description: Command reference for the `config` command of the Permguard CLI.
 ---
 

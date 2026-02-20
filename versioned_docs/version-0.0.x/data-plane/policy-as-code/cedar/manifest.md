@@ -2,7 +2,7 @@
 id: dataplane-policy-languages-cedar-manifest
 title: Cedar Manifest
 sidebar_label: Cedar Manifest
-sidebar_position: 40212
+sidebar_position: 2
 description: This section provides instructions for using the Cedar Manifest.
 ---
 

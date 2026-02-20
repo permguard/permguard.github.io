@@ -2,7 +2,7 @@
 id: dataplane-sdks-python-azclient
 title: AuthZClient
 sidebar_label: AuthZClient
-sidebar_position: 40408
+sidebar_position: 2
 description: This section provides instructions for using the AuthZClient in the Python SDK.
 ---ndex: false # false (default) or true
 ---

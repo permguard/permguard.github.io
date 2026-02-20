@@ -2,7 +2,7 @@
 id: developers-intro-to-permguard
 title: Intro to Permguard
 sidebar_label: Intro to Permguard
-sidebar_position: 10101
+sidebar_position: 1
 description: This section provides an introduction to Permguard.
 ---
 
@@ -157,19 +157,3 @@ Applications can enforce access control using:
 :::info
 SDKs are available for **Go**, **Rust**, **Java**, **.NET Core**, **Node.js**, and **Python**, with more in development.
 :::
-
----
-
-## Summary
-
-Permguard provides:
-
-- Strong Zero Trust authorization
-- Distributed enforcement
-- Centralized governance of intent
-- Integration at network or application layers
-- Support for multiple identity systems
-- Language-agnostic policy definitions
-- Flexible deployment across clouds, edge, and IoT
-
-Together, these capabilities provide precise control over **who** can access **which resources**, with consistent security across heterogeneous environments.

@@ -2,7 +2,7 @@
 id: learn-workspaces-plan-and-apply
 title: Plan and Apply
 sidebar_label: Plan and Apply
-sidebar_position: 60104
+sidebar_position: 5
 description: Learn about planning and applying changes in a Permguard workspace
 ---
 

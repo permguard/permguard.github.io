@@ -2,7 +2,7 @@
 id: dataplane-manifest
 title: Manifest
 sidebar_label: Manifest
-sidebar_position: 40202
+sidebar_position: 2
 description: This section provides instructions for using the Manifest.
 ---
 

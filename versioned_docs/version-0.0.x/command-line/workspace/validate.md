@@ -2,7 +2,7 @@
 id: command-line-workspace-validate
 title: Validate
 sidebar_label: Validate
-sidebar_position: 20210
+sidebar_position: 10
 description: Command reference for the `validate` command of the Permguard CLI.
 ---
 

@@ -2,7 +2,7 @@
 id: dataplane-sdks-go-install
 title: Install the Go SDK
 sidebar_label: Install the Go SDK
-sidebar_position: 40402
+sidebar_position: 1
 description: This section provides instructions for installing the Go SDK.
 ---
 

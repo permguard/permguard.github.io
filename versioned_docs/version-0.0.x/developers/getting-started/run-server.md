@@ -2,7 +2,7 @@
 id: developers-run-authz-server
 title: Run the Server
 sidebar_label: Run the Server
-sidebar_position: 10103
+sidebar_position: 3
 description: This section provides instructions for running the Server.
 ---
 

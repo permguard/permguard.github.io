@@ -2,7 +2,7 @@
 id: concepts-permissions-manifest
 title: Manifests
 sidebar_label: Manifests
-sidebar_position: 10222
+sidebar_position: 2
 description: Understanding the concept of Manifest in Permguard.
 ---
 

@@ -1,9 +1,9 @@
 ---
 id: dataplane-authorization-api
-title: Authorization API
-sidebar_label: Authorization API
-sidebar_position: 40311
-description: This section provides instructions for using the Authorization API.
+title: The AuthZ API
+sidebar_label: The AuthZ API
+sidebar_position: 1
+description: This section provides instructions for using the AuthZ API.
 ---
 
 The **AuthZApi** allows the `Policy Enforcement Point` (`PEP`) and the `Policy Decision Point` (`PDP`) to communicate. The `PEP` sends authorization requests, and the `PDP` responds with decisions. They do not need to know how the other works internally.

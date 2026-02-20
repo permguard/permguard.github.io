@@ -2,7 +2,7 @@
 id: deployment-server
 title: Server
 sidebar_label: Server
-sidebar_position: 10301
+sidebar_position: 1
 description: Overview of the Server component in the Permguard project.
 ---
 

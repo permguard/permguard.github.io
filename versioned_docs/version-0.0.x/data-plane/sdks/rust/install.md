@@ -2,7 +2,7 @@
 id: dataplane-sdks-rust-install
 title: Install the Rust SDK
 sidebar_label: Install the Rust SDK
-sidebar_position: 40405
+sidebar_position: 1
 description: This section provides instructions for installing the Rust SDK.
 ---
 

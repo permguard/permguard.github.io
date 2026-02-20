@@ -2,7 +2,7 @@
 id: command-line-workspace-objects
 title: Objects
 sidebar_label: Objects
-sidebar_position: 20208
+sidebar_position: 8
 description: Command reference for the `objects` command of the Permguard CLI.
 ---
 

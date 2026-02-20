@@ -2,7 +2,7 @@
 id: dataplane-sdks-java-azclient
 title: AuthZClient
 sidebar_label: AuthZClient
-sidebar_position: 40412
+sidebar_position: 2
 description: This section provides instructions for using the AuthZClient in the Java SDK.
 ---
 

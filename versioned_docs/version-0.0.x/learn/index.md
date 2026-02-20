@@ -2,7 +2,7 @@
 id: learn
 title: Learning Resources
 sidebar_label: Learning Resources
-sidebar_position: 60000
+sidebar_position: 6
 description: Learning Resources
 ---
 

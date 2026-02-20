@@ -2,7 +2,7 @@
 id: learn-workspaces-managing-ledgers
 title: Managing Ledgers
 sidebar_label: Managing Ledgers
-sidebar_position: 60102
+sidebar_position: 3
 description: Learn about managing ledgers in a Permguard workspace
 ---
 

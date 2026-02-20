@@ -2,7 +2,7 @@
 id: concepts-authn-authz
 title: AuthN vs AuthZ
 sidebar_label: AuthN vs AuthZ
-sidebar_position: 10201
+sidebar_position: 1
 description: Understanding the differences between Authentication (AuthN) and Authorization (AuthZ).
 ---
 

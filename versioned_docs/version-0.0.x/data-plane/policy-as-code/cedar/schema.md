@@ -2,7 +2,7 @@
 id: dataplane-policy-languages-cedar-schema
 title: Cedar Schema
 sidebar_label: Cedar Schema
-sidebar_position: 40214
+sidebar_position: 4
 description: This section provides instructions for using the Cedar Schema.
 ---
 

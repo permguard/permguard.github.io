@@ -2,7 +2,7 @@
 id: deployment-server-profiles
 title: Server Profiles
 sidebar_label: Server Profiles
-sidebar_position: 10303
+sidebar_position: 2
 description: Overview of the Server Profiles in the Permguard project.
 ---
 

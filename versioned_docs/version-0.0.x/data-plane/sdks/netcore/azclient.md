@@ -2,7 +2,7 @@
 id: dataplane-sdks-netcore-azclient
 title: AuthZClient
 sidebar_label: AuthZClient
-sidebar_position: 40414
+sidebar_position: 2
 description: This section provides instructions for using the AuthZClient in the .NET Core SDK.
 ---
 

@@ -2,7 +2,7 @@
 id: concepts-zones
 title: Zones
 sidebar_label: Zones
-sidebar_position: 10211
+sidebar_position: 1
 description: Understanding the concept of Zones in Permguard.
 ---
 

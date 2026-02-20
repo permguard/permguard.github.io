@@ -2,7 +2,7 @@
 id: learn-workspaces-initialization
 title: Initializing the Workspace
 sidebar_label: Initializing the Workspace
-sidebar_position: 60100
+sidebar_position: 1
 description: Learn about initializing a Permguard workspace
 ---
 

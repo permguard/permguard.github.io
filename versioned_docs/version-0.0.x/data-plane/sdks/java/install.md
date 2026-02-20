@@ -2,7 +2,7 @@
 id: dataplane-sdks-java-install
 title: Install the Java SDK
 sidebar_label: Install the Java SDK
-sidebar_position: 40411
+sidebar_position: 1
 description: This section provides instructions for installing the Java SDK.
 ---
 

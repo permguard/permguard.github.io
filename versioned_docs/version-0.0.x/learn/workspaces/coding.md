@@ -2,7 +2,7 @@
 id: learn-workspaces-coding
 title: Coding
 sidebar_label: Coding
-sidebar_position: 60103
+sidebar_position: 4
 description: Learn about coding in a Permguard workspace
 ---
 

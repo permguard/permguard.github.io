@@ -2,7 +2,7 @@
 id: dataplane-policy-languages
 title: Policy Languages
 sidebar_label: Policy Languages
-sidebar_position: 40203
+sidebar_position: 3
 description: This section provides instructions for using the Policy Languages.
 ---
 

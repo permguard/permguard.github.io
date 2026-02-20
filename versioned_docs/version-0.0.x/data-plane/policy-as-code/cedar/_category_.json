@@ -1,6 +1,6 @@
 {
   "label": "Cedar",
-  "position": 40210,
+  "position": 1,
   "link": {
     "type": "generated-index",
     "slug": "/data-plane/policy-as-code/cedar"

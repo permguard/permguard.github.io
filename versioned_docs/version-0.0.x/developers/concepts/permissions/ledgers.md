@@ -2,7 +2,7 @@
 id: concepts-permissions-ledgers
 title: Ledgers
 sidebar_label: Ledgers
-sidebar_position: 10221
+sidebar_position: 1
 description: Understanding the concept of Ledgers in Permguard.
 ---
 

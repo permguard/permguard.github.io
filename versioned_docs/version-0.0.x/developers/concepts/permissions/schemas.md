@@ -2,7 +2,7 @@
 id: concepts-permissions-schemas
 title: Schemas
 sidebar_label: Schemas
-sidebar_position: 10223
+sidebar_position: 3
 description: Understanding the concept of Schema in Permguard.
 ---
 

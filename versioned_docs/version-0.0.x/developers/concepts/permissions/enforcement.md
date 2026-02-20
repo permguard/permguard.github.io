@@ -2,7 +2,7 @@
 id: concepts-permissions-enforcement
 title: Enforcement
 sidebar_label: Enforcement
-sidebar_position: 10225
+sidebar_position: 5
 description: Understanding the concept of Enforcement in Permguard.
 ---
 

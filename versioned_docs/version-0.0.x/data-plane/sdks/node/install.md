@@ -2,7 +2,7 @@
 id: dataplane-sdks-node-install
 title: Install the Node SDK
 sidebar_label: Install the Node SDK
-sidebar_position: 40409
+sidebar_position: 1
 description: This section provides instructions for installing the Node SDK.
 ---
 

@@ -1,6 +1,6 @@
 {
   "label": "Data Plane",
-  "position": 40000,
+  "position": 4,
   "link": {
     "type": "generated-index",
     "slug": "/data-plane"

@@ -2,7 +2,7 @@
 id: dataplane-policy-languages-cedar-language
 title: Cedar Language
 sidebar_label: Cedar Language
-sidebar_position: 40213
+sidebar_position: 3
 description: This section provides instructions for using the Cedar Language.
 ---
 

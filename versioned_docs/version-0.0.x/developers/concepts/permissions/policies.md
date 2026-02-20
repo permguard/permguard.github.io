@@ -2,7 +2,7 @@
 id: concepts-permissions-policies
 title: Policies
 sidebar_label: Policies
-sidebar_position: 10224
+sidebar_position: 4
 description: Understanding the concept of Policy in Permguard.
 ---
 

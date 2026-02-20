@@ -2,7 +2,7 @@
 id: dataplane-authorization-api
 title: Authorization API
 sidebar_label: Authorization API
-sidebar_position: 40201
+sidebar_position: 1
 description: This section provides instructions for using the Authorization API.
 ---
 
