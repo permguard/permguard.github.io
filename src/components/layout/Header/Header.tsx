@@ -42,7 +42,7 @@ export const Header: React.FC<IHeaderProps> = ({ mobileSidebarToggle }) => {
         {mobileSidebarToggle ?? <MobileMenu />}
       </div>
 
-      <div className="relative [&>a]:text-white! [&>a]:hover:text-fuchsia-500! hidden basis-0 items-center justify-end gap-6 md:gap-5 min-[996px]:gap-4 xl:gap-6 min-[996px]:flex">
+      <div className="relative [&>a]:text-white [&>a]:hover:text-fuchsia-500! hidden basis-0 items-center justify-end gap-6 md:gap-5 min-[996px]:gap-4 xl:gap-6 min-[996px]:flex">
         <NavbarSearch>
           <SearchBar />
         </NavbarSearch>
