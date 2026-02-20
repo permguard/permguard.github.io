@@ -1,6 +1,6 @@
 {
     "label": "AuthZ",
-    "position": 1,
+    "position": 4,
     "link": {
         "type": "generated-index",
         "slug": "/command-line/authz"
