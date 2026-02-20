@@ -47,5 +47,5 @@ ${JSON.stringify(item, null, 2)}`,
 }
 
 export default function NavbarContent(): ReactNode {
-  return <Header mobileSidebarToggle={<NavbarMobileSidebarToggle />} />;
+  return <Header isDocs mobileSidebarToggle={<NavbarMobileSidebarToggle />} />;
 }
