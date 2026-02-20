@@ -60,7 +60,9 @@ export const Navigation = () => {
     <nav role="navigation">
       <ul className="gap-1.25 min-[996px]:gap-1.5 min-[1100px]:gap-3 xl:gap-6 hidden min-[996px]:flex">
         {NAVIGATION.map((el) => (
-          <NavLink key={el.docId} {...el} />
+          <li key={el.docId}>
+            <NavLink {...el} />
+          </li>
         ))}
       </ul>
     </nav>
