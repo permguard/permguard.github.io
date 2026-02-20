@@ -1,6 +1,6 @@
-import VERSIONS from "@site/versions.json";
 import { ComponentType, SVGProps } from "react";
 import { NavLink } from "./NavLink";
+import { LinkLikeNavbarItemProps } from "@theme/NavbarItem";
 
 export interface NavigationSublink {
   name: string;
@@ -12,48 +12,55 @@ export interface NavigationSublink {
   icon?: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
-export interface INavLink {
-  name: string;
-  href?: string;
-  sublinks?: NavigationSublink[];
-  external?: boolean;
-}
+export type INavLink = LinkLikeNavbarItemProps & { docId: string };
 
 type INavigation = INavLink[];
 
 export const NAVIGATION: INavigation = [
   {
-    name: "Developers",
-    href: "/developers/getting-started/developers-intro-to-permguard",
+    type: "doc",
+    docId: "developers/getting-started/developers-intro-to-permguard",
+    position: "left",
+    label: "Developers",
   },
   {
-    name: "Command-Line",
-    href: "/command-line",
+    type: "doc",
+    docId: "command-line/command-line",
+    position: "left",
+    label: "Command-Line",
   },
   {
-    name: "Control Plane",
-    href: "/control-plane",
+    type: "doc",
+    docId: "control-plane/control-plane",
+    position: "left",
+    label: "Control Plane",
   },
   {
-    name: "Data Plane",
-    href: "/data-plane",
+    type: "doc",
+    docId: "data-plane/data-plane",
+    position: "left",
+    label: "Data Plane",
   },
   {
-    name: "Trust Plane",
-    href: "/trust-plane",
+    type: "doc",
+    docId: "trust-plane/trust-plane",
+    position: "left",
+    label: "Trust Plane",
   },
   {
-    name: "Learn",
-    href: "/learn",
+    type: "doc",
+    docId: "learn/learn",
+    position: "left",
+    label: "Learn",
   },
 ];
 
 export const Navigation = () => {
   return (
     <nav role="navigation">
-      <ul className="gap-1.25 min-[996px]:gap-0 lg:gap-1 xl:gap-6 hidden min-[996px]:flex">
+      <ul className="gap-1.25 min-[996px]:gap-1.5 lg:gap-2 xl:gap-6 hidden min-[996px]:flex">
         {NAVIGATION.map((el) => (
-          <NavLink key={el.name} {...el} />
+          <NavLink key={el.docId} {...el} />
         ))}
       </ul>
     </nav>
