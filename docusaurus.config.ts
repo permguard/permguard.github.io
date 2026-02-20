@@ -15,8 +15,8 @@ const config: Config = {
   themeConfig: {
     algolia: {
       appId: "6F99UF9PLR",
-      apiKey: "744d695dd20b3801d01f8039e63f4c89",
-      indexName: "docs_permguard_com_index",
+      apiKey: "84f5f7152ae1a8dbf45a891e767d1831",
+      indexName: "index",
       contextualSearch: true,
     },
     metadata: [
