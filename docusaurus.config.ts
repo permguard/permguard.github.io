@@ -44,6 +44,42 @@ const config: Config = {
       },
       items: [
         {
+          type: "doc",
+          docId: "developers/getting-started/developers-intro-to-permguard",
+          position: "left",
+          label: "Developers",
+        },
+        {
+          type: "doc",
+          docId: "command-line/command-line",
+          position: "left",
+          label: "Command-Line",
+        },
+        {
+          type: "doc",
+          docId: "control-plane/control-plane",
+          position: "left",
+          label: "Control Plane",
+        },
+        {
+          type: "doc",
+          docId: "data-plane/data-plane",
+          position: "left",
+          label: "Data Plane",
+        },
+        {
+          type: "doc",
+          docId: "trust-plane/trust-plane",
+          position: "left",
+          label: "Trust Plane",
+        },
+        {
+          type: "doc",
+          docId: "learn/learn",
+          position: "left",
+          label: "Learn",
+        },
+        {
           type: "search",
           position: "right",
         },
@@ -58,31 +94,21 @@ const config: Config = {
       copyright: `Permguard® is a registered trademark.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsDark,
+      additionalLanguages: [
+        "powershell",
+        "bash",
+        "go",
+        "java",
+        "csharp",
+        "typescript",
+        "python",
+        "rust",
+        "markup",
+        // "json",
+      ],
     },
   } satisfies Preset.ThemeConfig,
-
-  scripts: [
-    // Custom JS
-    {
-      src: "/js/comparision-slider/slider.js",
-    },
-    {
-      src: "/js/highlightjs/highlight.min.js",
-    },
-    {
-      src: "/js/highlightjs/languages/python.min.js",
-    },
-    {
-      src: "/js/highlightjs/languages/go.min.js",
-    },
-    {
-      src: "/js/highlightjs/highlight-syntax.js",
-    },
-  ],
-
-  stylesheets: ["/css/highlightjs/devibeans.min.css"],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
