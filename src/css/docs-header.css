@@ -34,3 +34,7 @@
 .DocSearch-Button {
   padding: 0;
 }
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 0 !important;
+}
