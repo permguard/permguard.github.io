@@ -2,15 +2,9 @@ import { classNames } from "@site/src/utils/classNames";
 import { useState, useCallback } from "react";
 import { SocialLinks } from "./SocialLinks";
 import Portal from "@site/src/components/shared/Portal";
-import Link from "@docusaurus/Link";
 import { NAVIGATION } from "./Navigation/Navigation";
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useHistory, useLocation } from "@docusaurus/router";
+import NavbarItem from "@theme/NavbarItem";
 
 export const MobileMenu = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -76,67 +70,7 @@ export const MobileMenu = () => {
               <div className="flex flex-col p-4 h-full">
                 <div className="space-y-2 py-6 pl-2">
                   {NAVIGATION.map((el) => {
-                    if (el.sublinks) {
-                      return (
-                        <Disclosure
-                          defaultOpen={el.sublinks.some(
-                            (el) => location.pathname === el.href,
-                          )}
-                          key={el.name}
-                          as="div"
-                          className="-mx-3"
-                        >
-                          <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-white transition-colors hover:text-fuchsia-500 hover:bg-zinc-800">
-                            {el.name}
-                            <ChevronDownIcon
-                              aria-hidden="true"
-                              className="size-5 flex-none group-data-[open]:rotate-180"
-                            />
-                          </DisclosureButton>
-                          <DisclosurePanel className="mt-2 space-y-2">
-                            {el.sublinks.map((item) => (
-                              <DisclosureButton
-                                key={item.name}
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  history.push(item.href);
-                                  toggleMenu();
-                                }}
-                                as={Link}
-                                href={item.href}
-                                className={classNames(
-                                  "block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold hover:bg-zinc-800 transition-colors hover:text-fuchsia-500",
-                                  item.href === location.pathname
-                                    ? "text-fuchsia-500"
-                                    : "text-white",
-                                )}
-                              >
-                                {item.name}
-                              </DisclosureButton>
-                            ))}
-                          </DisclosurePanel>
-                        </Disclosure>
-                      );
-                    }
-
-                    return (
-                      <Link
-                        onClick={() => {
-                          toggleMenu();
-                        }}
-                        key={el.href}
-                        href={el.href}
-                        rel={el.external ? "noopener noreferrer" : undefined}
-                        className={classNames(
-                          "-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-zinc-800 transition-colors hover:text-fuchsia-500",
-                          el.href === location.pathname
-                            ? "text-fuchsia-500"
-                            : "text-white",
-                        )}
-                      >
-                        {el.name}
-                      </Link>
-                    );
+                    return <NavbarItem {...el} />;
                   })}
                 </div>
 
