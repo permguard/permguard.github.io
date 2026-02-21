@@ -295,7 +295,7 @@ This example demonstrates how to set up the `PharmaGovFlow` playground and perfo
 To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
 
 :::info
-Plese refer to the [Command Line Objects](../../command-line/workspace/-objects) section for more information about the available commands.
+Plese refer to the [Command Line Objects](../../command-line/workspace/objects) section for more information about the available commands.
 :::
 
 Below is an example of how to list all objects in the workspace.
