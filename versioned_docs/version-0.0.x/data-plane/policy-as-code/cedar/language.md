@@ -1,5 +1,5 @@
 ---
-id: dataplane-policy-languages-cedar-language
+id: language
 title: Cedar Language
 sidebar_label: Cedar Language
 sidebar_position: 3

@@ -1,5 +1,5 @@
 ---
-id: learn-workspaces-managing-remotes
+id: managing-remotes
 title: Managing Remotes
 sidebar_label: Managing Remotes
 sidebar_position: 2

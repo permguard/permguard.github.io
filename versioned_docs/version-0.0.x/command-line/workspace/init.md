@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-init
+id: init
 title: Init
 sidebar_label: Init
 sidebar_position: 1

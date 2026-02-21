@@ -1,5 +1,5 @@
 ---
-id: developers-essential-terminology
+id: essential-terminology
 title: Essential Terminology
 sidebar_label: Essential Terminology
 sidebar_position: 6

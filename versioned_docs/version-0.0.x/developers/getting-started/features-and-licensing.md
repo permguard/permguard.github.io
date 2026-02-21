@@ -1,5 +1,5 @@
 ---
-id: developers-features-and-licensing
+id: features-and-licensing
 title: Features & Licensing
 sidebar_label: Features & Licensing
 sidebar_position: 7

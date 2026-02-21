@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-ledger
+id: ledger
 title: Ledger
 sidebar_label: Ledger
 sidebar_position: 4

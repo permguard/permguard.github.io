@@ -1,5 +1,5 @@
 ---
-id: learn-pharma-govflow
+id: pharma-govflow
 title: PharmaGovFlow Sample
 sidebar_label: PharmaGovFlow Sample
 sidebar_position: 8
@@ -27,7 +27,7 @@ In real-world environments, these domains would likely be further segmented, but
 Therefore, each domain requires its own Permguard `zone` and a `root` ledger for managing policies.
 
 :::info
-Before proceeding, ensure the [CLI is installed](../../developers/getting-started/developers-install-cli) and the [Server is running](../../developers/getting-started/developers-run-authz-server).
+Before proceeding, ensure the [CLI is installed](../../developers/getting-started/developers-install-cli) and the [Server is running](../../developers/getting-started/developers-run-server).
 :::
 
 ---
@@ -158,7 +158,7 @@ A workspace represents a local working space. Plese refer to the [Learning Works
 
 ```text
 mkdir -p ./platform-administration-zone && cd ./platform-administration-zone
-permguard init --authz-language cedar
+permguard init --language cedar
 permguard remote add origin localhost
 permguard checkout origin/836576733282/root
 ```
@@ -233,11 +233,11 @@ Your workspace is synchronized with the remote ledger: head/836576733282/9c08015
 Policies have now been applied and it is time to perform an authorization check.
 
 :::info
-Plese refer to the [Command Line](../../command-line/authz/command-line-authz-check) section for more information about the available commands.
+Plese refer to the [Command Line](../../command-line/authz/check) section for more information about the available commands.
 :::
 
 ```sh
-cat << EOD > authz-request.json
+cat << EOD > request.json
 {
   "authorization_model": {
     "zone_id": 836576733282,
@@ -268,13 +268,13 @@ EOD
 ```
 
 ```text
-permguard authz check ./authz-request.json -o json
+permguard authz check ./request.json -o json
 ```
 
 Here’s what gets returned.
 
 ```json
-❯ permguard authz check ./authz-request.json -o json  | jq
+❯ permguard authz check ./request.json -o json  | jq
 {
   "authorization_check": {
     "request_id": "1f12378d138e4c75b70d7cfa32345d39",
@@ -302,7 +302,7 @@ This example demonstrates how to set up the `PharmaGovFlow` playground and perfo
 To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
 
 :::info
-Plese refer to the [Command Line Objects](../../command-line/workspace/command-line-workspace-objects) section for more information about the available commands.
+Plese refer to the [Command Line Objects](../../command-line/workspace/-objects) section for more information about the available commands.
 :::
 
 Below is an example of how to list all objects in the workspace.
@@ -369,7 +369,7 @@ type blob, size 397, oname branch-administration
 It is recommended to explore the [Policy as Code](../../data-plane/policy-as-code/dataplane-policy-languages) section to learn more about the policy store and the policy language.
 
 :::info
-Plese refer to the [Deployment](../../developers/deployment/deployment-server) section for more information about configuration and deployment.
+Plese refer to the [Deployment Options](../../developers/deployment/options) section for more information about configuration and deployment.
 :::
 
 Finally, it is worth considering how to deploy the Server.

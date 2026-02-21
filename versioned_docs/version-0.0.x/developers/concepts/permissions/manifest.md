@@ -1,5 +1,5 @@
 ---
-id: concepts-permissions-manifest
+id: manifest
 title: Manifests
 sidebar_label: Manifests
 sidebar_position: 2

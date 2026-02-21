@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-rust-install
+id: install
 title: Install the Rust SDK
 sidebar_label: Install the Rust SDK
 sidebar_position: 1

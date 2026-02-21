@@ -1,5 +1,5 @@
 ---
-id: developers-install-cli
+id: install-cli
 title: Get the CLI
 sidebar_label: Get the CLI
 sidebar_position: 2

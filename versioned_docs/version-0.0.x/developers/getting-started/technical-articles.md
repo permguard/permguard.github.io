@@ -1,5 +1,5 @@
 ---
-id: developers-technical-articles
+id: technical-articles
 title: Technical Articles
 sidebar_label: Technical Articles
 sidebar_position: 5

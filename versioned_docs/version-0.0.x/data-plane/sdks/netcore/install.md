@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-netcore-install
+id: install
 title: Install the .NET Core SDK
 sidebar_label: Install the .NET Core SDK
 sidebar_position: 1

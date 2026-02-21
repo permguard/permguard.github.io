@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-apply
+id: apply
 title: Apply
 sidebar_label: Apply
 sidebar_position: 2

@@ -1,5 +1,5 @@
 ---
-id: learn-workspaces-managing-ledgers
+id: managing-ledgers
 title: Managing Ledgers
 sidebar_label: Managing Ledgers
 sidebar_position: 3

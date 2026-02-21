@@ -1,5 +1,5 @@
 ---
-id: dataplane-authorization-api
+id: authorization-api
 title: Authorization API
 sidebar_label: Authorization API
 sidebar_position: 1

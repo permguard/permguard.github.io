@@ -1,5 +1,5 @@
 ---
-id: command-line-authz-ledgers
+id: ledgers
 title: Ledgers
 sidebar_label: Ledgers
 sidebar_position: 2

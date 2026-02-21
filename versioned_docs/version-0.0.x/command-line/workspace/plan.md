@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-plan
+id: plan
 title: Plan
 sidebar_label: Plan
 sidebar_position: 11

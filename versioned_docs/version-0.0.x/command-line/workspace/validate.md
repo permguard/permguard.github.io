@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-validate
+id: validate
 title: Validate
 sidebar_label: Validate
 sidebar_position: 10

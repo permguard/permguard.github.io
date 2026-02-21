@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-pull
+id: pull
 title: Pull
 sidebar_label: Pull
 sidebar_position: 6

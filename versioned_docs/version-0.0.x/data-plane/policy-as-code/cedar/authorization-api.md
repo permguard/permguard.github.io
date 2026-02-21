@@ -1,5 +1,5 @@
 ---
-id: dataplane-policy-languages-cedar-authorization-api
+id: authorization-api
 title: Cedar Authorization API
 sidebar_label: Cedar Authorization API
 sidebar_position: 1

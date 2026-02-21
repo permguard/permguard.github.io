@@ -1,5 +1,5 @@
 ---
-id: concepts-zones
+id: zones
 title: Zones
 sidebar_label: Zones
 sidebar_position: 1

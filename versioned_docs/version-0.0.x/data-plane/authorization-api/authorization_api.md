@@ -1,5 +1,5 @@
 ---
-id: dataplane-authorization-api
+id: authorization-api
 title: The AuthZ API
 sidebar_label: The AuthZ API
 sidebar_position: 1

@@ -1,5 +1,5 @@
 ---
-id: dataplane-policy-languages-cedar-manifest
+id: manifest
 title: Cedar Manifest
 sidebar_label: Cedar Manifest
 sidebar_position: 2

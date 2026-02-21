@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-clone
+id: clone
 title: Clone
 sidebar_label: Clone
 sidebar_position: 20205

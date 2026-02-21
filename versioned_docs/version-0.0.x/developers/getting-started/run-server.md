@@ -1,5 +1,5 @@
 ---
-id: developers-run-authz-server
+id: run-server
 title: Run the Permguard Server
 sidebar_label: Run the Server
 sidebar_position: 3
@@ -40,7 +40,7 @@ docker run --rm -it \
 
 When running the Permguard Server from its `Docker image`, configuration options are supplied through environment variables, allowing runtime behavior to be customized without modifying the image itself.
 
-The full list of available configuration options is documented in the [Server Profiles](../../developers/deployment/deployment-server-profiles).
+The full list of available configuration options is documented in the [Server Options](../../developers/deployment/options).
 
 ## Debug Mode
 

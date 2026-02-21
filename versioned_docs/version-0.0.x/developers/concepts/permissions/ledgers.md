@@ -1,5 +1,5 @@
 ---
-id: concepts-permissions-ledgers
+id: ledgers
 title: Ledgers
 sidebar_label: Ledgers
 sidebar_position: 1

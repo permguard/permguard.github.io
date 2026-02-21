@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-node-install
+id: install
 title: Install the Node SDK
 sidebar_label: Install the Node SDK
 sidebar_position: 1

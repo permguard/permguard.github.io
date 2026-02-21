@@ -1,5 +1,5 @@
 ---
-id: command-line-authz-check
+id: check
 title: Check
 sidebar_label: Check
 sidebar_position: 1

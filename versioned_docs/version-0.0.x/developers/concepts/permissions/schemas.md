@@ -1,5 +1,5 @@
 ---
-id: concepts-permissions-schemas
+id: schemas
 title: Schemas
 sidebar_label: Schemas
 sidebar_position: 3

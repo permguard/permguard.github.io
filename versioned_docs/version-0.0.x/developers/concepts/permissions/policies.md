@@ -1,5 +1,5 @@
 ---
-id: concepts-permissions-policies
+id: policies
 title: Policies
 sidebar_label: Policies
 sidebar_position: 4

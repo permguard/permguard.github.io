@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-refresh
+id: refresh
 title: Refresh
 sidebar_label: Refresh
 sidebar_position: 9

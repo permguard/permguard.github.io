@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-python-install
+id: install
 title: Install the Python SDK
 sidebar_label: Install the Python SDK
 sidebar_position: 1

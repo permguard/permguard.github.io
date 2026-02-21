@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-objects
+id: objects
 title: Objects
 sidebar_label: Objects
 sidebar_position: 8

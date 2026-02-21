@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-remote
+id: remote
 title: Remote
 sidebar_label: Remote
 sidebar_position: 2

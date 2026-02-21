@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-checkout
+id: checkout
 title: Checkout
 sidebar_label: Checkout
 sidebar_position: 3

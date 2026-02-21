@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-java-install
+id: install
 title: Install the Java SDK
 sidebar_label: Install the Java SDK
 sidebar_position: 1

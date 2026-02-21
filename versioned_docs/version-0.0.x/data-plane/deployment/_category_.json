@@ -1,8 +1,8 @@
 {
-  "label": "SDKs",
+  "label": "Deployment",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "slug": "/data-plane/sdks"
+    "slug": "/data-plane/deployment"
   }
 }

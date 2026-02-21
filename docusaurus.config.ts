@@ -45,7 +45,7 @@ const config: Config = {
       items: [
         {
           type: "doc",
-          docId: "developers/getting-started/developers-intro-to-permguard",
+          docId: "developers/getting-started/intro-to-permguard",
           position: "left",
           label: "Developers",
         },

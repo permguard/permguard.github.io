@@ -1,5 +1,5 @@
 ---
-id: learn-workspaces-coding
+id: coding
 title: Coding
 sidebar_label: Coding
 sidebar_position: 4

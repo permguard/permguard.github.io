@@ -1,5 +1,5 @@
 ---
-id: dataplane-policy-languages-cedar-schema
+id: schema
 title: Cedar Schema
 sidebar_label: Cedar Schema
 sidebar_position: 4

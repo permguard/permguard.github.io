@@ -1,5 +1,5 @@
 ---
-id: dataplane-policy-languages
+id: policy-languages
 title: Policy Languages
 sidebar_label: Policy Languages
 sidebar_position: 3

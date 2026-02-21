@@ -1,5 +1,5 @@
 ---
-id: command-line-config
+id: config
 title: Config
 sidebar_label: Config
 sidebar_position: 2

@@ -1,5 +1,5 @@
 ---
-id: concepts-authn-authz
+id: authn-authz
 title: AuthN vs AuthZ
 sidebar_label: AuthN vs AuthZ
 sidebar_position: 1

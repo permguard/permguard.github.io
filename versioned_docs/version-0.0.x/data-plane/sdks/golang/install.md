@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-go-install
+id: install
 title: Install the Go SDK
 sidebar_label: Install the Go SDK
 sidebar_position: 1

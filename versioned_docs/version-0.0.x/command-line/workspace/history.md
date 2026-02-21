@@ -1,5 +1,5 @@
 ---
-id: command-line-workspace-history
+id: history
 title: History
 sidebar_label: History
 sidebar_position: 7

@@ -1,5 +1,5 @@
 ---
-id: dataplane-manifest
+id: manifest
 title: Manifest
 sidebar_label: Manifest
 sidebar_position: 2

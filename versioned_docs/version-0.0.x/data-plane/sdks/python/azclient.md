@@ -1,5 +1,5 @@
 ---
-id: dataplane-sdks-python-azclient
+id: azclient
 title: AuthZClient
 sidebar_label: AuthZClient
 sidebar_position: 2

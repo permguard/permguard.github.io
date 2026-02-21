@@ -1,5 +1,5 @@
 ---
-id: concepts-permissions-enforcement
+id: enforcement
 title: Enforcement
 sidebar_label: Enforcement
 sidebar_position: 5

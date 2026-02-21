@@ -1,5 +1,5 @@
 ---
-id: learn-workspaces-plan-and-apply
+id: plan-and-apply
 title: Plan and Apply
 sidebar_label: Plan and Apply
 sidebar_position: 5
