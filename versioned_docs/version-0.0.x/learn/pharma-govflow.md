@@ -27,7 +27,7 @@ In real-world environments, these domains would likely be further segmented, but
 Therefore, each domain requires its own Permguard `zone` and a `root` ledger for managing policies.
 
 :::info
-Before proceeding, ensure the [CLI is installed](../../developers/getting-started/developers-install-cli) and the [Server is running](../../developers/getting-started/developers-run-server).
+Before proceeding, ensure the [CLI is installed](../../developers/getting-started/install-cli) and the [Server is running](../../developers/getting-started/run-server).
 :::
 
 
