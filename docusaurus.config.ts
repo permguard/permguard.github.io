@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Permguard",
   tagline:
-    "Rethinking Authorization Beyond the Token. From Static Claims to Runtime Trust.",
+    "Permguard is the authorization engine for both worlds: enforce policies on today's systems, enforce continuity on tomorrow's. One engine for governance, AI agents, and distributed execution.",
   url: "https://docs.permguard.com/",
   baseUrl: "/",
   favicon: "img/favicon.ico",
@@ -23,7 +23,7 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Rethinking Authorization Beyond the Token. From Static Claims to Runtime Trust. Secure, Auditable Decisions for Humans and Workloads. Boost SIEM & SOC with Decision Insights.",
+          "Permguard is the authorization engine for both worlds: enforce policies on today's systems, enforce continuity on tomorrow's. One engine for governance, AI agents, and distributed execution.",
       },
       { name: "theme-color", content: "#17181c" },
       { name: "msapplication-navbutton-color", content: "#17181c" },
