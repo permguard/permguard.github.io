@@ -38,3 +38,13 @@
 .theme-doc-breadcrumbs {
   margin-bottom: 0 !important;
 }
+
+.navbar__item {
+  display: block !important;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+}

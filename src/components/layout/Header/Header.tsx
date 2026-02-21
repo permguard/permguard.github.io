@@ -9,13 +9,19 @@ import NavbarItem from "@theme/NavbarItem";
 
 interface IHeaderProps {
   mobileSidebarToggle?: React.ReactNode;
+  isDocs?: boolean;
 }
 
-export const Header: React.FC<IHeaderProps> = ({ mobileSidebarToggle }) => {
+export const Header: React.FC<IHeaderProps> = ({
+  mobileSidebarToggle,
+  isDocs,
+}) => {
   return (
     <header
       className={classNames(
-        "sticky w-full max-w-360 mx-auto top-0 z-50 flex flex-none flex-wrap items-center justify-between px-6 py-4 min-[996px]:py-3.75 transition sm:px-10 md:px-6 xl:px-17.5 shadow-none",
+        "sticky w-full max-w-360 mx-auto top-0 z-50 flex flex-none flex-wrap items-center justify-between py-4 min-[996px]:py-[16px] lg:py-[15px] transition shadow-none",
+        // isDocs ? "px-6 sm:px-10 md:px-4" : "px-6 sm:px-10 md:px-6 xl:px-17.5",
+        "px-6 sm:px-10 md:px-4",
       )}
     >
       <div
