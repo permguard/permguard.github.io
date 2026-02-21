@@ -6,11 +6,11 @@ sidebar_position: 8
 description: Learn about the PharmaGovFlow example
 ---
 
-The **PharmaGovFlow** example demonstrates how `Permguard` enforces authorization across the distinct trust boundaries of a pharmacy ecosystem.
+The **PharmaGovFlow** example demonstrates how `Permguard` enforces **governance** — policy-based authorization — across the distinct trust boundaries of a pharmacy ecosystem.
 
-It shows how `users`, `workloads`, and `roles` interact within a Zero Trust authorization model.
+It shows how `users`, `workloads`, and `roles` interact within a Zero Trust governance model. This example focuses on **who can do what on which resources**, not on authority continuity (which is handled by the Trust Plane).
 
-The example is intentionally simplified to highlight core authorization concepts across **three main domains**:
+The example is intentionally simplified to highlight core governance concepts across **three main domains**:
 
 - **Platform-Administration Domain**
   Manages the pharmacy franchise: branches, teams, roles, and administrative operations.

@@ -16,8 +16,6 @@ These options apply to all components.
 |--------|---------|-------------|
 | `--debug` | `false` | Enables debug mode |
 | `--log-level` | `INFO` | Log level: `DEBUG`, `INFO`, `WARN`, `ERROR`, `DPANIC`, `PANIC`, `FATAL` |
-| `--server-appdata` | `./` | Directory used as application data |
-| `--storage-engine-central` | `SQLITE` | Storage engine for central data |
 
 <details>
   <summary>Log Levels</summary>
@@ -33,11 +31,3 @@ These options apply to all components.
 | `FATAL` | Logs then calls `os.Exit(1)` |
 
 </details>
-
-## Provisioners
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--debug` | `false` | Enables debug mode |
-| `--log-level` | `INFO` | Log level |
-| `--storage-engine-sqlite-filepath` | `.` | SQLite database file path |

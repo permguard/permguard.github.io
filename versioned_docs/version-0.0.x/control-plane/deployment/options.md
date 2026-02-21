@@ -14,6 +14,11 @@ For general options, see [General Options](../../developers/deployment/options.m
 
 These options apply to the control plane.
 
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--server-appdata` | `./` | Directory used as application data |
+| `--storage-engine-central` | `SQLITE` | Storage engine for central data |
+
 <details>
   <summary>SQLite Options</summary>
 
@@ -39,3 +44,11 @@ These options apply to the control plane.
 | `--storage-pap-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
 | `--server-pap-data-fetch-maxpagesize` | `10000` | Max items per request |
 | `--server-pap-grpc-port` | `9092` | gRPC port |
+
+## Provisioners
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--debug` | `false` | Enables debug mode |
+| `--log-level` | `INFO` | Log level |
+| `--storage-engine-sqlite-filepath` | `.` | SQLite database file path |

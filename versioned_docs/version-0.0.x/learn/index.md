@@ -6,4 +6,4 @@ sidebar_position: 6
 description: Learning Resources
 ---
 
-This section provides learning resources to help you understand the core concepts behind Permguard, from authorization fundamentals to authority continuity and policy-as-code.
+This section provides **learning resources** to help you understand the core concepts behind Permguard, from `authorization` fundamentals to `authority continuity` and `policy-as-code`.
