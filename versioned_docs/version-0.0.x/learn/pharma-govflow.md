@@ -27,7 +27,7 @@ In real-world environments, these domains would likely be further segmented, but
 Therefore, each domain requires its own Permguard `zone` and a `root` ledger for managing policies.
 
 :::info
-Before proceeding, ensure the [CLI is installed](/developers/getting-started/developers-install-cli) and the [Server is running](/developers/getting-started/developers-run-authz-server).
+Before proceeding, ensure the [CLI is installed](./developers/getting-started/developers-install-cli) and the [Server is running](./developers/getting-started/developers-run-authz-server).
 :::
 
 ---
@@ -153,7 +153,7 @@ This use case covers the clinical workflow from prescription creation to medicat
 In this step, the workspace is set up.
 
 :::info
-A workspace represents a local working space. Plese refer to the [Learning Workspace](/learn/workspaces/learn-workspaces-initialization) section for more information about the workspace.
+A workspace represents a local working space. Plese refer to the [Learning Workspace](./learn/workspaces/learn-workspaces-initialization) section for more information about the workspace.
 :::
 
 ```text
@@ -233,7 +233,7 @@ Your workspace is synchronized with the remote ledger: head/836576733282/9c08015
 Policies have now been applied and it is time to perform an authorization check.
 
 :::info
-Plese refer to the [Command Line](/command-line/authz/command-line-authz-check) section for more information about the available commands.
+Plese refer to the [Command Line](./command-line/authz/command-line-authz-check) section for more information about the available commands.
 :::
 
 ```sh
@@ -302,7 +302,7 @@ This example demonstrates how to set up the `PharmaGovFlow` playground and perfo
 To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
 
 :::info
-Plese refer to the [Command Line Objects](/command-line/workspace/command-line-workspace-objects) section for more information about the available commands.
+Plese refer to the [Command Line Objects](./command-line/workspace/command-line-workspace-objects) section for more information about the available commands.
 :::
 
 Below is an example of how to list all objects in the workspace.
@@ -366,10 +366,10 @@ permit (
 type blob, size 397, oname branch-administration
 ```
 
-It is recommended to explore the [Policy as Code](/data-plane/policy-as-code/dataplane-policy-languages) section to learn more about the policy store and the policy language.
+It is recommended to explore the [Policy as Code](./data-plane/policy-as-code/dataplane-policy-languages) section to learn more about the policy store and the policy language.
 
 :::info
-Plese refer to the [Deployment](/developers/deployment/deployment-server) section for more information about configuration and deployment.
+Plese refer to the [Deployment](./developers/deployment/deployment-server) section for more information about configuration and deployment.
 :::
 
 Finally, it is worth considering how to deploy the Server.
