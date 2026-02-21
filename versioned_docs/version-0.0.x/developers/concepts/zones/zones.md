@@ -11,7 +11,7 @@ description: Understanding the concept of Zones in Permguard.
 Each `zone` segments a distinct `trust model` and maintains its own ledgers, manifests, schemas, policies, and permissions.
 
 :::note
-In the [PharmaGovFlow sample](./learn/learn-pharma-govflow/), the `platform-admin-zone` is created as one of the example segments.
+In the [PharmaGovFlow sample](../../../learn/learn-pharma-govflow/), the `platform-admin-zone` is created as one of the example segments.
 :::
 
 Each zone is uniquely identified by a `name`.

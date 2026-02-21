@@ -8,25 +8,36 @@ description: This section provides an introduction to Permguard.
 
 ## What is Permguard?
 
-**Permguard** is a distributed authorization platform designed to implement a modern **authorization protocol** based on `Zero Trust` principles.
+**Permguard** is a distributed authorization platform that combines **governance** and **authority** in a single system, built on `Zero Trust` principles.
 
-Its core purpose is to define **who** is allowed to perform **which actions** on **which resources**, producing clear and verifiable authorization decisions.
+- **Governance** — policy-based authorization: who can do what on which resources
+- **Authority** — PIC-compliant authority continuity: causal, origin-bound, monotonically restricted execution chains
 
-Permguard models authorization through a unified policy framework:
-
-- **Who** — identities such as users or workloads
-- **Can Access** — permissions granted through policies
-- **Which Resources** — the protected resources or operations
-
-This model provides a consistent and extensible foundation for enforcing fine-grained access control across distributed systems.
+Permguard can be used for governance alone, or composed with authority continuity for full PIC enforcement.
 
 <div style={{textAlign: "center"}}>
   <img alt="Permguard" src="/images/diagrams/d14.webp"/>
 </div>
 
+## Three Planes
+
+Permguard is organized around three planes, each with a distinct responsibility:
+
+| Plane | Responsibility | What it does |
+|-------|---------------|--------------|
+| **Control Plane** | Configuration | Manages, versions, and distributes policies and settings |
+| **Data Plane** | Policy decisions | Evaluates permit/deny locally at the workload boundary |
+| **Trust Plane** | Authority continuity | Enforces PIC invariants: origin immutability, monotonic restriction, causal binding |
+
+The **Control Plane** and **Data Plane** handle governance. The **Trust Plane** handles authority.
+
+- Governance decides **what is currently permitted**
+- Authority ensures **execution is a valid continuation from the origin**
+
+When composed, governance becomes an inherently authority-reducing layer — it can restrict, never expand authority.
+
 ## What Permguard Enforces
 
-The fundamental Zero Trust rule in Permguard is simple:
 **every incoming request must be validated before the application processes it**.
 
 This applies uniformly across all interaction types — synchronous APIs, asynchronous messages, event streams, WebSocket frames, and cross-service calls — ensuring consistent enforcement at both the network layer and the application layer.
@@ -42,7 +53,7 @@ Beyond the input boundary, Permguard also governs **in-code authorization polici
 </div>
 <br/>
 
-The same policy model is applied across all enforcement layers, ensuring authorization remains:
+Authorization remains:
 
 - **governed in intent** — rules are collaboratively reviewed, versioned, and managed
 - **decentralized in enforcement** — decisions occur close to where actions happen
@@ -58,20 +69,16 @@ Policies are accessed through a unified control-plane interface, but this does *
 Enforcement remains fully distributed, while the control-plane provides a consistent place to define, review, update, and audit policies — even as the system evolves toward decentralized trust models.
 
 :::tip
-**Permguard** offers strong Zero Trust security with a simple integration path — define authorization intent once and enforce it everywhere.
+**Permguard** offers strong Zero Trust governance with a simple integration path — define authorization intent once and enforce it everywhere.
 :::
 
 ## Bring Your Own Identity (BYOI)
 
 Permguard is **identity-agnostic** on the authentication side.
-It follows a `Bring Your Own Identity (BYOI)` approach:
-
-- it consumes any identity your system already provides
-- it supports both user and workload identities
-- it does not replace your existing AuthN layer
+It follows a `Bring Your Own Identity (BYOI)` approach.
 
 :::info
-The main goal of **Permguard** is to provide strong authorization with built-in trust governance, not authentication.
+The main goal of **Permguard** is to provide strong authorization governance, not authentication. Identity establishes the origin of authority — Permguard governs what that authority permits.
 :::
 
 ## Where Authorization Runs
@@ -86,19 +93,11 @@ Authorization can be triggered by either:
 
 In both cases, the request is always evaluated **before** performing any action.
 
-Each incoming request carries at least two identities:
-
-- **Self identity** — the workload performing the action
-- **Peer identity** — the caller (user or workload)
-
-Additional **attestations** may also be included, such as tokens, workload proofs, or signed claims.
-
----
-
 The **data-plane** receives the full request context (identities, attestations, network metadata, application attributes) and evaluates it locally using policies obtained from the **control-plane**.
 
 - The **control-plane** manages and distributes policies
 - The **data-plane** enforces permit/deny decisions at the workload boundary
+- The **trust-plane** validates authority continuity (PIC invariants)
 
 This creates a consistent and decentralized Zero Trust model for both synchronous and asynchronous workflows.
 
@@ -118,8 +117,6 @@ Permguard is `language-agnostic` and supports multiple policy languages, startin
 
 Each language is implemented through a thin abstraction layer that keeps the core model stable while requiring only a minimal common keyword set.
 
----
-
 ## Deployment Flexibility
 
 Permguard can run in:
@@ -128,27 +125,30 @@ Permguard can run in:
 - `Kubernetes` and `serverless` platforms
 - `edge` and `IoT` ecosystems, including `partially connected` or `disconnected` scenarios
 
-The architecture consists of two main components:
+The architecture consists of three main components:
 
 - `Control Plane`
-  Must be reachable at the network level to expose policy governance.
-  It can also run on `edge` components or distributed infrastructure as long as it provides a consistent governance view.
+  Manages, versions, and distributes policies and configuration.
+  Must be reachable at the network level. Can run on `edge` components or distributed infrastructure.
 
 - `Data Planes`
+  Enforce permit/deny decisions locally.
   Can be deployed anywhere — inside applications, gateways, edge devices, remote regions, or disconnected environments.
+
+- `Trust Plane`
+  Validates PIC authority continuity: origin immutability, monotonic restriction, and causal binding.
+  Can be embedded, sidecar, or centralized depending on the deployment model.
 
 <div style={{textAlign: "center"}}>
   <img alt="Permguard" src="/images/diagrams/d13.webp"/>
 </div>
 
----
-
 ## Integrating with Permguard
 
-Applications can enforce access control using:
+Applications can enforce authorization using:
 
 - the official **SDKs**, or
-- Permguard’s native **APIs**
+- Permguard's native **APIs**
 
 <div style={{textAlign: "center"}}>
   <img alt="Permguard" src="/images/diagrams/d19.webp"/>

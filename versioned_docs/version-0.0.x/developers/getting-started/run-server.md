@@ -1,23 +1,33 @@
 ---
 id: developers-run-authz-server
-title: Run the Server
+title: Run the Permguard Server
 sidebar_label: Run the Server
 sidebar_position: 3
-description: This section provides instructions for running the Server.
+description: This section provides instructions for running the Permguard Server.
 ---
 
-The **`Server`** can operate as both the `control-plane` and the `data-plane` for `Permguard`.
+The **Permguard Server** comprises the `control-plane` and the `data-plane`.
 
-In its simplest form, it runs in an `all-in-one` configuration, where a single instance acts as both the `control-plane` and the `data-plane`:
+By default, the Permguard Server handles **governance** — policy management and enforcement. The `trust-plane` (PIC authority continuity) is a separate component and is deployed independently following its own [deployment guide](../../trust-plane/deployment/trust-plane).
 
-- When acting as the `control-plane`, the `Server` manages policies, trust configuration, and governance rules, providing a unified interface for defining and distributing authorization intent, or
-- When acting as the `data-plane`, it evaluates incoming authorization requests and enforces the resulting decisions.
+## Default: Control Plane + Data Plane
+
+In its simplest form, the Permguard Server runs in an `all-in-one` configuration, where a single instance acts as both the `control-plane` and the `data-plane`:
+
+- **Control Plane** — manages policies, configuration, and governance rules. Provides a unified interface for defining and distributing authorization intent.
+- **Data Plane** — evaluates incoming authorization requests and enforces permit/deny decisions locally.
 
 The default container image runs in `all-in-one` mode, making it ideal for development, testing, or simple environments.
 
-In production, enforcement can be distributed, with dedicated data-plane instances deployed near workloads—inside applications, `sidecars`, `gateways`, or `edge` components.
+In production, enforcement can be distributed, with dedicated data-plane instances deployed near workloads — inside applications, `sidecars`, `gateways`, or `edge` components.
 
-To start the server using the latest container image:
+:::info
+The **Trust Plane** is not included in the default Permguard Server image. It is deployed separately to enforce PIC invariants (origin immutability, monotonic restriction, causal binding). See the [Trust Plane deployment guide](../../trust-plane/deployment/trust-plane) for details.
+:::
+
+## Starting the Permguard Server
+
+To start the Permguard Server using the latest container image:
 
 ```bash
 docker pull permguard/all-in-one:latest
@@ -28,9 +38,11 @@ docker run --rm -it \
   permguard/all-in-one:latest
 ```
 
-When running `Permguard` from its `Docker image`, configuration options are supplied through environment variables, allowing runtime behavior to be customized without modifying the image itself.
+When running the Permguard Server from its `Docker image`, configuration options are supplied through environment variables, allowing runtime behavior to be customized without modifying the image itself.
 
-The full list of available configuration options is documented in the [Server Profiles](./developers/deployment/deployment-server-profiles).
+The full list of available configuration options is documented in the [Server Profiles](../../developers/deployment/deployment-server-profiles).
+
+## Debug Mode
 
 Example with debugging enabled:
 
@@ -44,16 +56,18 @@ docker run --rm -it \
   permguard/all-in-one:latest
 ```
 
-When `PERMGUARD_DEBUG` is set to `TRUE`, the `Server` operates in debug mode, providing verbose logging and diagnostic output suitable for development and troubleshooting scenarios.
+When `PERMGUARD_DEBUG` is set to `TRUE`, the Permguard Server operates in debug mode, providing verbose logging and diagnostic output suitable for development and troubleshooting scenarios.
 
-It is also possible to access the local SQLite database used by the `Server` by mounting a host directory into the container.
+## Persistent Storage
+
+It is also possible to access the local SQLite database used by the Permguard Server by mounting a host directory into the container.
 
 This allows direct inspection or interaction with the database files from the host system.
 
 ```bash
 docker pull permguard/all-in-one:latest
 docker run --rm -it \
-  -v ./local:/opt/permguard/volume
+  -v ./local:/opt/permguard/volume \
   -p 9091:9091 \
   -p 9092:9092 \
   -p 9094:9094 \

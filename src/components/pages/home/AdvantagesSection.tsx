@@ -20,7 +20,7 @@ const advantages = [
   {
     icon: "/images/home/build.svg",
     title: "Governance",
-    text: "Governance is expressed as code, versioned, testable, and enforceable. Policy restricts what continuity allows — it never creates new authority.",
+    text: "Git-like model to distribute policies that decide what is permitted. When combined with continuity, they can only restrict, never expand authority.",
   },
 ];
 

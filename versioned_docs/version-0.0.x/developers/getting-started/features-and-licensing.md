@@ -8,7 +8,7 @@ description: This section provides an overview of Permguard's features and licen
 
 **Permguard Community** is an open-source project licensed under the **Apache-2.0 license**. It is designed to be a flexible and powerful **authorization platform**, supporting policies written in different languages.
 
-For more details on legal terms and licenses, visit [Legal & Licenses](./developers/legal-licenses/legal-licenses-third-party-technologies).
+For more details on legal terms and licenses, visit [Legal & Licenses](../../developers/legal-licenses/legal-licenses-third-party-technologies).
 
 :::caution
 When reviewing licenses, always check that you are referencing the correct version of the documentation, related websites, or other **Permguard** materials.
