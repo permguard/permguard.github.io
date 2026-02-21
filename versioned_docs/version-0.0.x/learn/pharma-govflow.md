@@ -30,7 +30,6 @@ Therefore, each domain requires its own Permguard `zone` and a `root` ledger for
 Before proceeding, ensure the [CLI is installed](../../developers/getting-started/developers-install-cli) and the [Server is running](../../developers/getting-started/developers-run-server).
 :::
 
----
 
 ## Creating the Zones and Ledgers
 
@@ -85,15 +84,11 @@ Each use case spans multiple roles, services, and trusted zones within the Pharm
   <img alt="Permguard" src="/images/diagrams/pharmaazflow-components.png"/>
 </div>
 
----
-
 :::caution
 Although this example uses explicit roles (e.g. `platform-admin`, `branch-owner`, `pharmacist`) for clarity, **Permguard is not limited to role-based access control (RBAC)**.
 
 In real-world deployments it is possible to model rich authorization using **ABAC**. PharmaGovFlow is therefore a **didactic example**, not a limitation of what Permguard can express or enforce.
 :::
-
----
 
 ### 1. Branch Management
 
@@ -117,8 +112,6 @@ This use case covers the administrative workflow of creating and managing pharma
 | Zone                           | Service             | Purpose                                  |
 |--------------------------------|---------------------|------------------------------------------|
 | `platform-administration-zone` | `platform-service`  | Branch creation, user/role assignment    |
-
----
 
 ### 2. Prescription & Medication Order Flow
 
