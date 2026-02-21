@@ -146,7 +146,7 @@ This use case covers the clinical workflow from prescription creation to medicat
 In this step, the workspace is set up.
 
 :::info
-A workspace represents a local working space. Plese refer to the [Learning Workspace](../../learn/workspaces/learn-workspaces-initialization) section for more information about the workspace.
+A workspace represents a local working space. Plese refer to the [Learning Workspace](../../learn/workspaces/initialization) section for more information about the workspace.
 :::
 
 ```text
