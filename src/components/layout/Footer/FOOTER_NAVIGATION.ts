@@ -34,7 +34,7 @@ export const FOOTER_NAVIGATION = [
     links: [
       {
         title: "Concepts",
-        href: "/developers/concepts/concepts-authn-authz",
+        href: "/developers/concepts/authn-authz",
       },
       {
         title: "SDKs",

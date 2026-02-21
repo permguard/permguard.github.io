@@ -14,14 +14,10 @@ Unless explicitly stated otherwise, **Permguard Project** is not affiliated with
 
 All trademarks, logos, trade names, and intellectual property mentioned on this site are the property of their respective owners. Any omission of a specific disclaimer for a particular technology or product does not imply any form of endorsement, sponsorship, or affiliation.
 
----
-
 ## Language & AI
 
 This text was originally written by the authors.
 AI-based tools were used only to refine grammar and clarity, without altering the meaning or intent.
-
----
 
 ## Cedar
 
@@ -39,13 +35,9 @@ AI-based tools were used only to refine grammar and clarity, without altering th
 
 For more information, you can view Cedar's licensing and documentation on the [official ledger](https://github.com/cedar-policy/cedar) and its [official site](https://www.cedarpolicy.com/en).
 
----
-
 ## Future Technologies
 
 As our project evolves, we may integrate or reference additional technologies and languages. Each will be listed here with full transparency about its source, licensing, and relevant disclaimers.
-
----
 
 ## Additional Disclaimer
 
@@ -58,8 +50,6 @@ While we strive to include accurate disclaimers for every technology and product
 - **Permguard Project**, its creator **Nitro Agility**, and all contributors disclaim any liability for misunderstandings, omissions, or misinterpretations related to third-party affiliations.
 
 If you believe there are errors, omissions, or unclear references in this documentation, please contact us at **opensource@nitroagility.com**, and we will review and correct any inaccuracies promptly.
-
----
 
 :::caution
 This page does **not** replace or supersede the official licenses or legal notices of any third-party technology mentioned here.
@@ -77,5 +67,3 @@ When reviewing licenses, please ensure you are referencing the appropriate versi
 
 If any part of this page contains content that references trademarks, technologies, or intellectual property of third parties, please note that **Permguard Project**, **Nitro Agility**, and all contributors are not affiliated with, endorsed, or sponsored by such entities, unless explicitly stated otherwise. For any doubts or corrections, please contact us at [opensource@nitroagility.com](mailto:opensource@nitroagility.com), and we will promptly address potential inaccuracies.
 :::
-
----

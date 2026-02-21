@@ -34,53 +34,6 @@ These options apply to all components.
 
 </details>
 
-<details>
-  <summary>SQLite Options</summary>
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--storage-engine-sqlite-dbname` | `permguard` | SQLite database name |
-
-</details>
-
-## Control Plane
-
-### ZAP — Zone Administration Point
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--storage-zap-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
-| `--server-zap-data-fetch-maxpagesize` | `10000` | Max items per request |
-| `--server-zap-data-enable-default-creation` | `false` | Enables default entity creation |
-| `--server-zap-grpc-port` | `9091` | gRPC port |
-
-### PAP — Policy Administration Point
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--storage-pap-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
-| `--server-pap-data-fetch-maxpagesize` | `10000` | Max items per request |
-| `--server-pap-grpc-port` | `9092` | gRPC port |
-
-## Data Plane
-
-### PIP — Policy Information Point
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--storage-pip-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
-| `--server-pip-data-fetch-maxpagesize` | `10000` | Max items per request |
-| `--server-pip-grpc-port` | `9093` | gRPC port |
-
-### PDP — Policy Decision Point
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--storage-pdp-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
-| `--server-pdp-data-fetch-maxpagesize` | `10000` | Max items per request |
-| `--server-pdp-grpc-port` | `9094` | gRPC port |
-| `--server-pdp-decision-log` | `NONE` | Decision log output: `NONE`, `STDOUT`, `FILE` |
-
 ## Provisioners
 
 | Option | Default | Description |

@@ -11,7 +11,7 @@ description: This section provides an overview of Permguard's features and licen
 For more details on legal terms and licenses, visit [Legal & Licenses](../../developers/legal-licenses/legal-licenses-third-party-technologies).
 
 :::caution
-When reviewing licenses, always check that you are referencing the correct version of the documentation, related websites, or other **Permguard** materials.
+When reviewing licenses, always check that you are referencing the correct version of the documentation, related websites, or other **[Permguard](https://www.permguard.com)** materials.
 
 These resources may be updated over time to reflect changes or improvements, especially for third-party technologies beyond our control. Ensuring you have the right version helps keep the information aligned with the specific software or materials you are using.
 

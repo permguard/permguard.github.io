@@ -1,9 +1,9 @@
 ---
 id: authorization-api
-title: The AuthZ API
-sidebar_label: The AuthZ API
-sidebar_position: 1
-description: This section provides instructions for using the AuthZ API.
+title: Authorization API
+sidebar_label: Authorization API
+sidebar_position: 2
+description: This section provides instructions for using the Authorization API.
 ---
 
 The **AuthZApi** allows the `Policy Enforcement Point` (`PEP`) and the `Policy Decision Point` (`PDP`) to communicate. The `PEP` sends authorization requests, and the `PDP` responds with decisions. They do not need to know how the other works internally.
@@ -26,7 +26,7 @@ The request payload contains the following elements:
   The payload supports multiple policy engines, each with its own entity schema. Entities are defined by a `schema` name and a list of `items` that follow this schema.
 
 - **`subject`, `resource`, `action`, `context`**:
-  These elements define the subject (who is requesting access), the resource (what is being accessed), the action (what operation is performed), and the context (time-related details of the request). These elements follow widely recognized authorization standards, such as [OpenID AuthZEN](https://openid.net/wg/authzen/specifications/).
+  These elements define the subject (who is requesting access), the resource (what is being accessed), the action (what operation is performed), and the context (time-related details of the request). Where applicable, these elements align with widely recognized authorization standards such as [OpenID AuthZEN](https://openid.net/wg/authzen/specifications/), although Permguard diverges in its foundational model by treating authority as a continuity property rather than a possession-based primitive.
 
 - **`evaluations`**:
   A list of access requests that a `principal` can use to evaluate multiple access decisions in a single message exchange. This allows checking permissions for multiple subjects at once, a process also known as "boxcarring" requests.

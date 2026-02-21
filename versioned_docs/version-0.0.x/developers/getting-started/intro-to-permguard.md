@@ -25,11 +25,11 @@ Permguard is organized around three planes, each with a distinct responsibility:
 
 | Plane | Responsibility | What it does |
 |-------|---------------|--------------|
-| **[Control Plane](../../control-plane/)** | Configuration | Manages, versions, and distributes policies and settings |
+| **[Control Plane](../../control-plane/)** | Configuration | Manages, versions, and distributes policies and configurations |
 | **[Data Plane](../../data-plane/)** | Policy decisions | Evaluates permit/deny locally at the workload boundary |
 | **[Trust Plane](../../trust-plane/)** | Authority continuity | Enforces PIC invariants: origin immutability, monotonic restriction, causal binding |
 
-The **Control Plane** and **Data Plane** handle governance. The **Trust Plane** handles authority.
+The **Data Plane** handles governance. The **Trust Plane** handles authority.
 
 - Governance decides **what is currently permitted**
 - Authority ensures **execution is a valid continuation from the origin**
@@ -38,7 +38,7 @@ When composed, governance becomes an inherently authority-reducing layer — it 
 
 ## What Permguard Enforces
 
-**every incoming request must be validated before the application processes it**.
+**Every incoming request must be validated before the application processes it**.
 
 This applies uniformly across all interaction types — synchronous APIs, asynchronous messages, event streams, WebSocket frames, and cross-service calls — ensuring consistent enforcement at both the network layer and the application layer.
 
@@ -155,5 +155,5 @@ Applications can enforce authorization using:
 </div>
 
 :::info
-SDKs are available for **Go**, **Rust**, **Java**, **.NET Core**, **Node.js**, and **Python**, with more in development.
+SDKs are available for **[Go](../../data-plane/sdks/golang/install)**, **[Rust](../../data-plane/sdks/rust/install)**, **[Python](../../data-plane/sdks/python/install)**,  **[Node.js](../../data-plane/sdks/node/install)**, **[Java](../../data-plane/sdks/java/install)** and **[.NET Core](../../data-plane/sdks/netcore/install)**, with more in development.
 :::

@@ -12,6 +12,17 @@ For general options, see [General Options](../../developers/deployment/options.m
 
 ## Control Plane
 
+These options apply to the control plane.
+
+<details>
+  <summary>SQLite Options</summary>
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--storage-engine-sqlite-dbname` | `permguard` | SQLite database name |
+
+</details>
+
 ### ZAP — Zone Administration Point
 
 | Option | Default | Description |

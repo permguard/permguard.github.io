@@ -6,11 +6,11 @@ sidebar_position: 3
 description: This section provides instructions for running the Permguard Server.
 ---
 
-The **Permguard Server** comprises the `control-plane` and the `data-plane`.
+The **Permguard Server** is the `control-plane`. It can optionally include the `data-plane` for policy enforcement.
 
-By default, the Permguard Server handles **governance** — policy management and enforcement. The `trust-plane` (PIC authority continuity) is a separate component and is deployed independently following its own [deployment guide](../../trust-plane/deployment/options).
+The `trust-plane` (PIC authority continuity) is always deployed separately. See the [Trust Plane deployment guide](../../trust-plane/deployment/options) for details.
 
-## Default: Control Plane + Data Plane
+## All-in-One Mode
 
 In its simplest form, the Permguard Server runs in an `all-in-one` configuration, where a single instance acts as both the `control-plane` and the `data-plane`:
 
@@ -25,9 +25,9 @@ In production, enforcement can be distributed, with dedicated data-plane instanc
 The **Trust Plane** is not included in the default Permguard Server image. It is deployed separately to enforce PIC invariants (origin immutability, monotonic restriction, causal binding). See the [Trust Plane deployment guide](../../trust-plane/deployment/options) for details.
 :::
 
-## Starting the Permguard Server
+## Starting the All-in-One Permguard Server
 
-To start the Permguard Server using the latest container image:
+To start the Permguard Server in `all-in-one` mode using the latest container image:
 
 ```bash
 docker pull permguard/all-in-one:latest
