@@ -46,28 +46,28 @@ Permguard conventionally names the main ledger of a zone `root`, representing th
 Let's create the zones and their `root` ledgers:
 
 ```text
-permguard zones create --name platform-admin-zone
-permguard authz ledgers create --name root --zone-id 836576733282
-permguard zones create --name pharmacy-management-zone
-permguard authz ledgers create --name root --zone-id 121820121075
-permguard zones create --name patient-services-zone
-permguard authz ledgers create --name root --zone-id 927579003246
+permguard zones create platform-admin-zone
+permguard authz ledgers create root --zone-id 836576733282
+permguard zones create pharmacy-management-zone
+permguard authz ledgers create root --zone-id 121820121075
+permguard zones create patient-services-zone
+permguard authz ledgers create root --zone-id 927579003246
 ```
 
 Captured output.
 
 ```text
-❯ permguard zones create --name platform-admin-zone
+❯ permguard zones create platform-admin-zone
 836576733282: platform-admin-zone
-❯ permguard authz ledgers create --name root --zone-id 836576733282
+❯ permguard authz ledgers create root --zone-id 836576733282
 9c08015ca0fe46e9b0b54179cbd22bf3: root
-❯ permguard zones create --name pharmacy-management-zone
+❯ permguard zones create pharmacy-management-zone
 121820121075: pharmacy-management-zone
-❯ permguard authz ledgers create --name root --zone-id 121820121075
+❯ permguard authz ledgers create root --zone-id 121820121075
 a0d10339102c4690a8c13a01ac60cd74: root
-❯ permguard zones create --name patient-services-zone
+❯ permguard zones create patient-services-zone
 927579003246: patient-services-zone
-❯ permguard authz ledgers create --name root --zone-id 927579003246
+❯ permguard authz ledgers create root --zone-id 927579003246
 b811788cde40438d90f062b9d5a7fd2c: root
 ```
 

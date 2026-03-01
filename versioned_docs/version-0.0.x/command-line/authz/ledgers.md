@@ -41,7 +41,7 @@ The output from your current version of Permguard may differ from the example pr
 The `permguard authz ledgers create` command allows to create a ledger for the mandatory input zone and name.
 
 ```bash
-permguard authz ledgers create --zone-id 273165098782 --name pharmagovflow
+permguard authz ledgers create --zone-id 273165098782 pharmagovflow
 ```
 
 output:
@@ -56,7 +56,7 @@ output:
   </summary>
 
 ```bash
-permguard authz ledgers create --zone-id 273165098782 --name pharmagovflow --output json
+permguard authz ledgers create --zone-id 273165098782 pharmagovflow --output json
 ```
 
 output:

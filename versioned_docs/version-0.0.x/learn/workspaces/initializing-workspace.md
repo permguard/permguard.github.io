@@ -30,7 +30,7 @@ A **Permguard workspace** contains the following files:
 When starting a new project, the first step is to **create a zone**.
 
 ```bash
-permguard zones create --name pharmagovflow-dev --output json
+permguard zones create pharmagovflow-dev --output json
 ```
 
 Below is the output of the command.
@@ -51,7 +51,7 @@ Below is the output of the command.
 Next, create a ledger.
 
 ```bash
-permguard authz ledgers create --zone-id 273165098782  --name pharmagovflow --output json
+permguard authz ledgers create --zone-id 273165098782  pharmagovflow --output json
 ```
 
 Below is the output of the command.

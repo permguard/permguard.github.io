@@ -41,7 +41,7 @@ The output from your current version of Permguard may differ from the example pr
 The `permguard zones create` command allows to create a zone for the input name.
 
 ```bash
-permguard zones create --name pharmagovflow-dev
+permguard zones create pharmagovflow-dev
 ```
 
 output:
@@ -56,7 +56,7 @@ output:
   </summary>
 
 ```bash
-permguard zones create --name pharmagovflow-dev --output json
+permguard zones create pharmagovflow-dev --output json
 ```
 
 output:
