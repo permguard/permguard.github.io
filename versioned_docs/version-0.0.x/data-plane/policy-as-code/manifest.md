@@ -9,7 +9,6 @@ description: This section provides instructions for using the Manifest.
 The **Manifest** is used to define the `AuthZ` trust models.
 
 Below is an example of an `AuthZManifest`:
-
 ```json
 {
     "metadata": {
@@ -32,12 +31,16 @@ Below is an example of an `AuthZManifest`:
             }
         }
     },
-    "partitions": {
-        "/": {
-            "runtime": "cedar[0.0+]",
-            "schema": false
+    "biz_policies": [
+        {
+            "partitions": {
+                "/": {
+                    "runtime": "cedar[0.0+]",
+                    "schema": false
+                }
+            }
         }
-    }
+    ]
 }
 ```
 
@@ -51,6 +54,10 @@ This section defines the available runtimes required by the **authorization mode
 Each of these runtimes is associated with a specific language and engine.
 
 Both of them have a version, and the **+** means from that version to any other version. Without it, the version is fixed.
+
+## **Biz Policies**
+
+This section defines the business policies of the **authorization model**. Each entry contains a set of partitions that group policies by runtime and schema configuration.
 
 ## **Partitions**
 
