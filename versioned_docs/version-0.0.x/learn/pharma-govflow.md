@@ -151,7 +151,7 @@ A workspace represents a local working space. Plese refer to the [Learning Works
 
 ```text
 mkdir -p ./platform-administration-zone && cd ./platform-administration-zone
-permguard init --language cedar
+permguard init --authz-language cedar
 permguard remote add origin localhost
 permguard checkout origin/836576733282/root
 ```
