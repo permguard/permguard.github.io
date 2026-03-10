@@ -167,6 +167,17 @@ pre code.hljs {
 
 :root {
   --ifm-color-primary: #d53ec6;
+
+  /* Override Infima info palette (blue #54c7ec → Permguard pink) */
+  --ifm-color-info: #d53ec6;
+  --ifm-color-info-dark: #c038b5;
+  --ifm-color-info-darker: #b534ab;
+  --ifm-color-info-darkest: #95298d;
+  --ifm-color-info-light: #de5ed1;
+  --ifm-color-info-lighter: #e67eda;
+  --ifm-color-info-lightest: #eea0e4;
+  --ifm-color-info-contrast-background: #3c1938;
+  --ifm-color-info-contrast-foreground: #f5e0f2;
 }
 
 /* Version banner styling */
@@ -416,6 +427,41 @@ pre[class*="language-"]::before {
 }
 
 /* ======================================================
+   CODE BLOCK BUTTONS (copy, word wrap) — Permguard pink
+   ====================================================== */
+[class*="buttonGroup"] button,
+button[class*="copyButton"],
+button[class*="wordWrap"],
+[class*="codeBlockTitle"] ~ div button,
+div[class*="codeBlock"] button {
+  color: rgba(213, 62, 198, 0.55) !important;
+  transition: color 0.2s ease, background 0.2s ease !important;
+}
+
+[class*="buttonGroup"] button:hover,
+button[class*="copyButton"]:hover,
+button[class*="wordWrap"]:hover,
+[class*="codeBlockTitle"] ~ div button:hover,
+div[class*="codeBlock"] button:hover {
+  color: #d53ec6 !important;
+  background: rgba(213, 62, 198, 0.08) !important;
+}
+
+/* Code block title bar — Permguard accent */
+[class*="codeBlockTitle"] {
+  color: rgba(213, 62, 198, 0.75) !important;
+  border-bottom-color: rgba(213, 62, 198, 0.12) !important;
+}
+
+/* Highlighted code line — pink accent instead of default blue */
+.docusaurus-highlight-code-line,
+[class*="codeLineHighlight"],
+.theme-code-block-highlighted-line {
+  background: rgba(213, 62, 198, 0.08) !important;
+  border-left: 3px solid #d53ec6 !important;
+}
+
+/* ======================================================
    SELECTION COLOR
    ====================================================== */
 ::selection {
@@ -505,14 +551,14 @@ table tbody tr:last-child td {
 
 /* Inline code inside table cells — monospace techy look */
 table td code {
-  background: rgba(0, 200, 255, 0.08) !important;
-  border: 1px solid rgba(0, 200, 255, 0.18) !important;
-  color: #5de5fa !important;
+  background: rgba(213, 62, 198, 0.08) !important;
+  border: 1px solid rgba(213, 62, 198, 0.18) !important;
+  color: #e07ad8 !important;
   font-size: 0.8rem !important;
   padding: 0.15em 0.45em !important;
   border-radius: 4px;
   font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, monospace;
-  text-shadow: 0 0 6px rgba(93, 229, 250, 0.15);
+  text-shadow: 0 0 6px rgba(213, 62, 198, 0.15);
 }
 
 /* ======================================================
