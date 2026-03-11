@@ -16,9 +16,10 @@ Usage:
   permguard config get [command]
 
 Available Commands:
-  pap-endpoint Get the pap endpoint
-  pdp-endpoint Get the pdp endpoint
-  zap-endpoint Get the zap endpoint
+  authstar-max-object-size Get the authstar max object size
+  pap-endpoint             Get the pap endpoint
+  pdp-endpoint             Get the pdp endpoint
+  zap-endpoint             Get the zap endpoint
 
 Flags:
   -h, --help   help for get
@@ -79,9 +80,11 @@ permguard config show
 output:
 
 ```bash
-zap-endpoint: grpc://localhost:9091
-pap-endpoint: grpc://localhost:9092
-pdp-endpoint: grpc://localhost:9094
+endpoints.zap: grpc://localhost:9091
+endpoints.pap: grpc://localhost:9092
+endpoints.pdp: grpc://localhost:9094
+language: cedar
+authstar.max-object-size: 5242880
 ```
 
 <details>
@@ -95,9 +98,15 @@ output:
 
 ```json
 {
-  "zap_endpoint": "grpc://localhost:9091",
-  "pap_endpoint": "grpc://localhost:9092",
-  "pdp_endpoint": "grpc://localhost:9094"
+  "endpoints": {
+    "zap": "grpc://localhost:9091",
+    "pap": "grpc://localhost:9092",
+    "pdp": "grpc://localhost:9094"
+  },
+  "language": "cedar",
+  "authstar": {
+    "max_object_size": 5242880
+  }
 }
 ```
 
@@ -150,6 +159,37 @@ output:
 
 ```json
 {"pdp_endpoint":"grpc://localhost:9094"}
+```
+
+</details>
+
+## Authstar Max Object Size
+
+The `authstar-max-object-size` setting defines the maximum allowed size in bytes for objects in the authstar storage (commits, trees, blobs). The default value is `5242880` (5MB).
+
+### Set Authstar Max Object Size
+
+```bash
+permguard config set authstar-max-object-size 10485760
+```
+
+### Get Authstar Max Object Size
+
+```bash
+permguard config get authstar-max-object-size
+```
+
+<details>
+  <summary>JSON Output</summary>
+
+```bash
+permguard config get authstar-max-object-size -o json
+```
+
+output:
+
+```json
+{"authstar_max_object_size":5242880}
 ```
 
 </details>
