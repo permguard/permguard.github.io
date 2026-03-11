@@ -13,8 +13,10 @@ Usage:
   permguard authz check [flags]
 
 Flags:
-      --zone-id int    zone id
-  -h, --help          help for check
+      --current-workspace        resolve zone-id and policy-store-id from the current workspace
+  -h, --help                     help for check
+      --policy-store-id string   override authorization_model.policy_store.id
+      --zone-id int              override authorization_model.zone_id
 
 Global Flags:
   -o, --output string    output format (default "terminal")
@@ -50,18 +52,46 @@ output:
 Authorization check response: true
 ```
 
+## Override Authorization Model
+
+The `--zone-id` and `--policy-store-id` flags allow to override the values defined in the authorization request file.
+
+```bash
+permguard authz check --zone-id 273165098782 --policy-store-id 04921d7814134921916972693bb3351f /path/to/authorization_request.json
+```
+
+## Use Current Workspace
+
+The `--current-workspace` flag resolves `zone-id` and `policy-store-id` from the current workspace, overriding the values defined in the authorization request file.
+
+```bash
+permguard authz check --current-workspace /path/to/authorization_request.json
+```
+
+The explicit `--zone-id` and `--policy-store-id` flags take precedence over `--current-workspace` if both are provided.
+
+```bash
+permguard authz check --current-workspace --zone-id 273165098782 /path/to/authorization_request.json
+```
+
+The priority order is:
+
+```text
+file → --current-workspace → --zone-id / --policy-store-id
+```
+
 <details>
   <summary>
     JSON Output
   </summary>
 
-  ```bash
+```bash
   permguard authz check --zone-id 273165098782 /path/to/authorization_request.json -o json
-  ```
+```
 
   output:
 
-  ```json
+```json
   {
     "authorization_check": {
       "decision": true,
@@ -74,6 +104,6 @@ Authorization check response: true
       ]
     }
   }
-  ```
+```
 
 </details>
