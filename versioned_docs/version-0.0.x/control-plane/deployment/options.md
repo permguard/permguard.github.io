@@ -46,11 +46,14 @@ These options apply to the control plane.
 
 | Option | Default | Description |
 |--------|---------|-------------|
-<!-- updated: added server-pap-authstar-max-object-size flag to match source code -->
+<!-- updated: added server-pap-authstar-max-object-size and tx-cleanup flags to match source code -->
 | `--storage-pap-engine-central` | `SQLITE` | Storage engine (overrides `--storage-engine-central`) |
 | `--server-pap-data-fetch-maxpagesize` | `10000` | Max items per request |
 | `--server-pap-authstar-max-object-size` | `5242880` | Authstar max object size in bytes for push/pull (5MB) |
 | `--server-pap-grpc-port` | `9092` | gRPC port |
+| `--server-pap-tx-cleanup-enabled` | `true` | Enable background cleanup of stale transactions. When enabled, a background job periodically removes pending transactions that have exceeded their maximum lifetime |
+| `--server-pap-tx-cleanup-interval` | `5m` | How often the transaction cleanup job runs (e.g. `5m`, `10m`, `1h`) |
+| `--server-pap-tx-max-lifetime` | `5m` | Maximum lifetime for a pending transaction before it is considered stale and cleaned up (e.g. `5m`, `10m`, `1h`) |
 
 ## Provisioners
 
