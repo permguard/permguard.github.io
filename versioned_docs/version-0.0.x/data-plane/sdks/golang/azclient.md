@@ -24,8 +24,8 @@ req := azreq.NewAZAtomicRequestBuilder(273165098782, "fd1ac44e4afa4fc4beec622494
   "amy.smith@acmecorp.com", "PharmaAuthZFlow::Platform::Subscription", "PharmaAuthZFlow::Platform::Action::create")
 
 // Check the authorization
-decsion, _, _ := azClient.Check(req)
-if decsion {
+decision, _, _ := azClient.Check(req)
+if decision {
   fmt.Println("✅ Authorization Permitted")
 } else {
   fmt.Println("❌ Authorization Denied")
@@ -82,8 +82,8 @@ req := azreq.NewAZAtomicRequestBuilder(273165098782, "fd1ac44e4afa4fc4beec622494
   Build()
 
 // Check the authorization
-decsion, response, _ := azClient.Check(req)
-if decsion {
+decision, response, _ := azClient.Check(req)
+if decision {
   fmt.Println("✅ Authorization Permitted")
 } else {
   fmt.Println("❌ Authorization Denied")
@@ -129,7 +129,7 @@ resource := azreq.NewResourceBuilder("PharmaAuthZFlow::Platform::Subscription").
   WithProperty("isEnabled", true).
   Build()
 
-// Create ations
+// Create actions
 actionView := azreq.NewActionBuilder("PharmaAuthZFlow::Platform::Action::create").
   WithProperty("isEnabled", true).
   Build()
@@ -181,8 +181,8 @@ req := azreq.NewAZRequestBuilder(273165098782, "fd1ac44e4afa4fc4beec622494d3175a
   Build()
 
 // Check the authorization
-decsion, response, _ := azClient.Check(req)
-if decsion {
+decision, response, _ := azClient.Check(req)
+if decision {
   fmt.Println("✅ Authorization Permitted")
 } else {
   fmt.Println("❌ Authorization Denied")

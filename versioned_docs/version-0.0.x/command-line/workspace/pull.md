@@ -60,7 +60,7 @@ output:
     {
       "code_id": "schema",
       "code_type": "schema",
-      "lanaguage_version": "*",
+      "language_version": "*",
       "language_type": "schema",
       "language": "cedar-json",
       "oid": "bafyreiaapbtxeti2vaasc3ms3dii5urgtjk6jfkxllhld5dm33mfsqkz5y",
@@ -70,7 +70,7 @@ output:
     {
       "code_id": "assign-role-branch",
       "code_type": "policy",
-      "lanaguage_version": "*",
+      "language_version": "*",
       "language_type": "policy",
       "language": "cedar-json",
       "oid": "bafyreibfs6sumu5qsgel6yj2ettkmqiaugyumex75u55qvmn7qsn2y5dj4",
@@ -80,7 +80,7 @@ output:
     {
       "code_id": "view-branch-inventory-auditors",
       "code_type": "policy",
-      "lanaguage_version": "*",
+      "language_version": "*",
       "language_type": "policy",
       "language": "cedar-json",
       "oid": "bafyreicvh2o5kwyfsgjq5qcdxse4dkkbbvzxknxjim6ibbc35kmw27fbne",

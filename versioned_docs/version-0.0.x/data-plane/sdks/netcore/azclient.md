@@ -218,7 +218,7 @@ try
         .WithProperty("isEnabled", true)
         .Build();
 
-    // Create ations
+    // Create actions
     var actionView = new ActionBuilder("PharmaAuthZFlow::Platform::Action::create")
         .WithProperty("isEnabled", true)
         .Build();

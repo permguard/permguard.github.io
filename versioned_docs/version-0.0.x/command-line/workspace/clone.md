@@ -2,7 +2,7 @@
 id: clone
 title: Clone
 sidebar_label: Clone
-sidebar_position: 20205
+sidebar_position: 3
 description: Command reference for the `clone` command of the Permguard CLI.
 ---
 
@@ -10,7 +10,7 @@ Using the `clone` command, it is possible to clone a remote ledger locally.
 
 ```text
 Usage:
-  permguard clone localhost[flags]
+  permguard clone [flags]
 
 Flags:
       --zap int   zap port (default 9091)

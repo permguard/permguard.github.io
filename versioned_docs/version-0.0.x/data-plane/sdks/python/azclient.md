@@ -4,10 +4,9 @@ title: AuthZClient
 sidebar_label: AuthZClient
 sidebar_position: 2
 description: This section provides instructions for using the AuthZClient in the Python SDK.
----ndex: false # false (default) or true
 ---
 
-The application, acting as a Policy Enforcement Point (PEP), enforces policies defined by the Policy Ok Point (PDP). The Permguard Python SDK facilitates communication with the Permguard PDP.
+The application, acting as a Policy Enforcement Point (PEP), enforces policies defined by the Policy Decision Point (PDP). The Permguard Python SDK facilitates communication with the Permguard PDP.
 
 This communication occurs through the `AuthZClient`, a component that provides a straightforward interface for interacting with the Permguard `Server`.
 

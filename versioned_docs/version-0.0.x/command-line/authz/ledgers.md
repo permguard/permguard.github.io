@@ -27,16 +27,15 @@ Global Flags:
   -o, --output string   output format (default "terminal")
   -v, --verbose          true for verbose output
   -w, --workdir string   workdir (default ".")
-  -v, --verbose         true for verbose output
 
-Use "Permguard authz ledgers [command] --help" for more information about a command.
+Use "permguard authz ledgers [command] --help" for more information about a command.
 ```
 
 :::caution
 The output from your current version of Permguard may differ from the example provided on this page.
 :::
 
-## Create an Ledger
+## Create a Ledger
 
 The `permguard authz ledgers create` command allows to create a ledger for the mandatory input zone and name.
 

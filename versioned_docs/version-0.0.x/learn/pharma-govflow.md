@@ -146,7 +146,7 @@ This use case covers the clinical workflow from prescription creation to medicat
 In this step, the workspace is set up.
 
 :::info
-A workspace represents a local working space. Plese refer to the [Learning Workspace](../../learn/workspaces/initialization) section for more information about the workspace.
+A workspace represents a local working space. Please refer to the [Learning Workspace](../../learn/workspaces/initialization) section for more information about the workspace.
 :::
 
 ```text
@@ -226,7 +226,7 @@ Your workspace is synchronized with the remote ledger: head/836576733282/9c08015
 Policies have now been applied and it is time to perform an authorization check.
 
 :::info
-Plese refer to the [Command Line](../../command-line/authz/check) section for more information about the available commands.
+Please refer to the [Command Line](../../command-line/authz/check) section for more information about the available commands.
 :::
 
 ```sh
@@ -295,7 +295,7 @@ This example demonstrates how to set up the `PharmaGovFlow` playground and perfo
 To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
 
 :::info
-Plese refer to the [Command Line Objects](../../command-line/workspace/objects) section for more information about the available commands.
+Please refer to the [Command Line Objects](../../command-line/workspace/objects) section for more information about the available commands.
 :::
 
 Below is an example of how to list all objects in the workspace.
@@ -362,7 +362,7 @@ type blob, size 397, oname branch-administration
 It is recommended to explore the [Policy as Code](../../data-plane/policy-as-code/policy-languages) section to learn more about the policy store and the policy language.
 
 :::info
-Plese refer to the [Deployment Options](../../developers/deployment/options) section for more information about configuration and deployment.
+Please refer to the [Deployment Options](../../developers/deployment/options) section for more information about configuration and deployment.
 :::
 
 Finally, it is worth considering how to deploy the Server.

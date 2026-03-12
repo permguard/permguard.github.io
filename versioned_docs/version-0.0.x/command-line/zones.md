@@ -29,7 +29,7 @@ Global Flags:
   -v, --verbose          true for verbose output
   -w, --workdir string   workdir (default ".")
 
-Use "Permguard zones [command] --help" for more information about a command.
+Use "permguard zones [command] --help" for more information about a command.
 ```
 
 :::caution
