@@ -38,11 +38,12 @@ These options configure TLS for gRPC communication. See the [Transport Security]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--server-tls-mode` | `none` | TLS mode: `none`, `tls`, `mtls`, `external` |
+| `--server-tls-mode` | `none` | TLS mode: `none`, `tls`, `mtls`, `external`, `spiffe` |
 | `--server-tls-cert-file` | — | Path to server TLS certificate (PEM) |
 | `--server-tls-key-file` | — | Path to server TLS private key (PEM) |
 | `--server-tls-ca-file` | — | Path to CA certificate for client verification in mTLS (PEM) |
 | `--server-tls-auto-cert-dir` | `{appdata}/certs/` | Directory for auto-generated certificates (mode=tls only) |
+| `--server-tls-spiffe-socket-path` | — | SPIFFE Workload API socket path (mode=spiffe only, defaults to `SPIFFE_ENDPOINT_SOCKET` env) |
 
 <details>
   <summary>TLS Modes</summary>
@@ -53,5 +54,6 @@ These options configure TLS for gRPC communication. See the [Transport Security]
 | `tls` | Server-side TLS. The server presents a certificate. If no cert is provided, one is auto-generated. |
 | `mtls` | Mutual TLS. Both server and client present and verify certificates. |
 | `external` | Mutual TLS using certificates provisioned by infrastructure (e.g., SPIRE, Vault, cert-manager). Requires `cert-file`, `key-file`, and `ca-file`. |
+| `spiffe` | Native SPIFFE mTLS via the Workload API. No certificate files needed — the server connects directly to the SPIRE agent. |
 
 </details>

@@ -18,6 +18,7 @@ The server's TLS mode is set at startup with the `--server-tls-mode` flag (or th
 | **tls** | `--server-tls-mode=tls` | `grpcs://` | Server-side TLS | Server only |
 | **mtls** | `--server-tls-mode=mtls` | `grpcs://` | Mutual TLS | Server + Client |
 | **external** | `--server-tls-mode=external` | `grpcs://` | Mutual TLS (infrastructure-provisioned certs) | Server + Client |
+| **spiffe** | `--server-tls-mode=spiffe` | `grpcs://` | Mutual TLS (native SPIFFE Workload API) | SPIFFE ID verification |
 
 ## Mode: none (Plaintext)
 
@@ -252,6 +253,84 @@ permguard zones list \
 In `external` mode, the infrastructure is responsible for **provisioning, rotating, and revoking** certificates. Permguard simply consumes the certificate files at the configured paths. When SPIRE rotates an SVID, the server picks up the new certificate automatically at the next TLS handshake.
 :::
 
+## Mode: spiffe (Native SPIFFE mTLS)
+
+In this mode, Permguard integrates **natively** with the [SPIFFE](https://spiffe.io/) Workload API using the `go-spiffe` library. Unlike `external` mode, the server connects directly to the SPIRE agent — no sidecar, no certificate files on disk, and no manual certificate management.
+
+The key advantages over `external` mode are:
+
+- **No spiffe-helper sidecar** — the server talks to the Workload API directly, reducing pod complexity
+- **No certificate files** — X.509 SVIDs are fetched and rotated in-memory via the Workload API
+- **SPIFFE ID verification** — peers are authenticated by their SPIFFE ID (URI SAN), not by hostname (DNS SAN)
+- **Automatic rotation** — certificates are renewed transparently without process restart
+
+### Server
+
+In Kubernetes with SPIRE, the server only needs the Workload API socket mounted via CSI driver:
+
+```yaml
+volumes:
+  - name: spiffe-workload-api
+    csi:
+      driver: "csi.spiffe.io"
+      readOnly: true
+containers:
+  - name: permguard
+    env:
+      - name: PERMGUARD_SERVER_TLS_MODE
+        value: "spiffe"
+      - name: SPIFFE_ENDPOINT_SOCKET
+        value: "unix:///spiffe-workload-api/spire-agent.sock"
+    volumeMounts:
+      - name: spiffe-workload-api
+        mountPath: /spiffe-workload-api
+        readOnly: true
+```
+
+No `cert-file`, `key-file`, or `ca-file` is needed — the server obtains everything from the Workload API.
+
+Optionally, the socket path can also be specified via the `--server-tls-spiffe-socket-path` flag instead of the `SPIFFE_ENDPOINT_SOCKET` environment variable.
+
+### CLI (from inside a SPIFFE-enabled pod)
+
+When running the CLI from inside a pod that has a SPIFFE identity (e.g., with the SPIRE CSI driver mounted), the `--spiffe-enabled` flag enables native SPIFFE authentication:
+
+```bash
+permguard config set zap-endpoint grpcs://permguard-spiffe:9091
+
+permguard zones list --spiffe-enabled
+```
+
+The CLI automatically connects to the local Workload API, obtains its own X.509 SVID, and uses it to authenticate with the server. No certificate files need to be specified.
+
+If the Workload API socket is at a non-standard location:
+
+```bash
+permguard zones list --spiffe-enabled --spiffe-endpoint /custom/path/to/agent.sock
+```
+
+### CLI (from outside the cluster)
+
+The `--spiffe-enabled` flag requires a SPIFFE Workload API to be available. When connecting from outside the cluster (e.g., from a developer machine), use the `none` or `tls` instance instead, or use `--tls-skip-verify` with the SPIFFE instance for testing purposes.
+
+### Server Flags Reference (spiffe)
+
+| Flag | Environment Variable | Description |
+|------|---------------------|-------------|
+| `--server-tls-mode` | `PERMGUARD_SERVER_TLS_MODE` | Set to `spiffe` |
+| `--server-tls-spiffe-socket-path` | `PERMGUARD_SERVER_TLS_SPIFFE_SOCKET_PATH` | Path to the SPIFFE Workload API socket (optional, defaults to `SPIFFE_ENDPOINT_SOCKET` env) |
+
+### CLI Flags Reference (spiffe)
+
+| Flag | Description |
+|------|-------------|
+| `--spiffe-enabled` | Enable native SPIFFE mTLS via the Workload API |
+| `--spiffe-endpoint` | Path to the SPIFFE Workload API socket (defaults to `SPIFFE_ENDPOINT_SOCKET` env) |
+
+:::tip
+Use `spiffe` mode for **service-to-service** communication inside the cluster. For human/CI access from outside the cluster, use `none` or `tls` mode on a separate Permguard instance.
+:::
+
 ## Troubleshooting
 
 | Error | Likely Cause | Fix |
@@ -260,6 +339,8 @@ In `external` mode, the infrastructure is responsible for **provisioning, rotati
 | `first record does not look like a TLS handshake` | TLS client connecting to a plaintext server | Switch endpoint to `grpc://` |
 | `certificate signed by unknown authority` | Server uses a self-signed or private CA certificate | Add `--tls-skip-verify` (dev) or `--tls-ca-file` (prod) |
 | `certificate required` | Server requires mTLS but no client cert was provided | Add `--tls-cert-file` and `--tls-key-file` |
+| `certificate is not valid for any names` | SPIFFE cert has URI SAN, not DNS SAN | Use `spiffe` mode instead of `external`, or add `--tls-skip-verify` |
+| `spiffe: failed to create X509 source` | Workload API socket not available | Ensure SPIRE agent is running and `SPIFFE_ENDPOINT_SOCKET` is set |
 | `tls: mode=tls requires either cert-file+key-file or auto-cert-dir` | Server config missing cert paths | Provide cert files or let auto-cert generate them |
 
 ## Quick Reference
@@ -268,11 +349,12 @@ In `external` mode, the infrastructure is responsible for **provisioning, rotati
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `PERMGUARD_SERVER_TLS_MODE` | `none` | TLS mode: `none`, `tls`, `mtls`, `external` |
+| `PERMGUARD_SERVER_TLS_MODE` | `none` | TLS mode: `none`, `tls`, `mtls`, `external`, `spiffe` |
 | `PERMGUARD_SERVER_TLS_CERT_FILE` | — | Server certificate path (PEM) |
 | `PERMGUARD_SERVER_TLS_KEY_FILE` | — | Server private key path (PEM) |
 | `PERMGUARD_SERVER_TLS_CA_FILE` | — | CA for client verification in mTLS (PEM) |
 | `PERMGUARD_SERVER_TLS_AUTO_CERT_DIR` | `{appdata}/certs/` | Directory for auto-generated certs |
+| `PERMGUARD_SERVER_TLS_SPIFFE_SOCKET_PATH` | — | SPIFFE Workload API socket path (mode=spiffe only) |
 
 ### CLI Flags
 
@@ -282,3 +364,5 @@ In `external` mode, the infrastructure is responsible for **provisioning, rotati
 | `--tls-ca-file` | CA certificate for server verification (PEM) |
 | `--tls-cert-file` | Client certificate for mTLS (PEM) |
 | `--tls-key-file` | Client private key for mTLS (PEM) |
+| `--spiffe-enabled` | Enable native SPIFFE mTLS via Workload API |
+| `--spiffe-endpoint` | SPIFFE Workload API socket path (defaults to `SPIFFE_ENDPOINT_SOCKET` env) |

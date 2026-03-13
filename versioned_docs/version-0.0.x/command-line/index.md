@@ -42,7 +42,9 @@ Available Commands:
 Flags:
   -h, --help                   help for permguard
   -o, --output string          output format (default "terminal")
-      --tls-ca-file string     path to CA certificate for server verification (PEM)
+      --spiffe-enabled           enable native SPIFFE mTLS via Workload API
+      --spiffe-endpoint string   SPIFFE Workload API socket path (defaults to SPIFFE_ENDPOINT_SOCKET env)
+      --tls-ca-file string       path to CA certificate for server verification (PEM)
       --tls-cert-file string   path to client certificate for mTLS (PEM)
       --tls-key-file string    path to client private key for mTLS (PEM)
       --tls-skip-verify        skip server certificate verification (insecure, dev only)
@@ -79,7 +81,7 @@ permguard zones list --output json
 
 ## Transport Security
 
-The Permguard Server supports four **TLS modes** to secure gRPC communication between the CLI and the server. The transport security mode is configured on the **server side** and determines how clients must connect.
+The Permguard Server supports five **TLS modes** to secure gRPC communication between the CLI and the server. The transport security mode is configured on the **server side** and determines how clients must connect.
 
 | Mode | Description |
 |------|-------------|
@@ -87,6 +89,7 @@ The Permguard Server supports four **TLS modes** to secure gRPC communication be
 | `tls` | Server-side TLS. The server presents a certificate and encrypts all traffic. The CLI connects using the `grpcs://` scheme. For self-signed or auto-generated certificates, use `--tls-skip-verify`. |
 | `mtls` | Mutual TLS. Both server and client present certificates. The CLI connects using `grpcs://` and must provide `--tls-cert-file` and `--tls-key-file`. |
 | `external` | Mutual TLS using certificates provisioned by an external authority (e.g., SPIRE/SPIFFE, HashiCorp Vault, cert-manager). The server requires `cert-file`, `key-file`, and `ca-file` — but these are automatically managed by the infrastructure. The CLI connects using `grpcs://`. |
+| `spiffe` | Native SPIFFE mTLS via the Workload API. The server connects directly to the SPIRE agent — no certificate files or sidecar needed. The CLI connects using `grpcs://` with `--spiffe-enabled`. |
 
 ### Connecting to a Server with TLS Disabled (none)
 
@@ -137,6 +140,17 @@ permguard zones list \
   --tls-key-file /path/to/client-svid-key.pem \
   --tls-ca-file /path/to/bundle.pem
 ```
+
+### Connecting to a Server with Native SPIFFE (spiffe)
+
+When the server runs with `--server-tls-mode=spiffe`, it performs mutual TLS natively via the SPIFFE Workload API. From inside a pod with a SPIFFE identity:
+
+```bash
+permguard config set zap-endpoint grpcs://permguard-spiffe:9091
+permguard zones list --spiffe-enabled
+```
+
+No certificate files are needed — the CLI obtains its X.509 SVID automatically from the Workload API.
 
 :::info
 If you see an error like `connection reset by peer` or `error reading server preface`, it usually means you are connecting with `grpc://` to a TLS-enabled server. Switch to `grpcs://` and, if needed, add `--tls-skip-verify`.

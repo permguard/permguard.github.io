@@ -99,5 +99,5 @@ permguard zones list --tls-skip-verify
 ```
 
 :::info
-For a complete guide on all TLS modes (none, tls, mtls, external), see the [Transport Security](../../learn/transport-security) learning resource and the [Deployment Options](../../developers/deployment/options).
+For a complete guide on all TLS modes (none, tls, mtls, external, spiffe), see the [Transport Security](../../learn/transport-security) learning resource and the [Deployment Options](../../developers/deployment/options).
 :::
