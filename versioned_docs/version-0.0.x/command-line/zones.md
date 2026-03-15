@@ -82,6 +82,88 @@ output:
 
 </details>
 
+## Delete a Zone
+
+The `permguard zones delete` command allows to delete an existing zone.
+The `--zone-id` flag is **required**: the command does not accept positional arguments.
+
+```bash
+permguard zones delete --zone-id 273165098782
+```
+
+output:
+
+```bash
+ 273165098782: platform-admin-zone
+```
+
+<details>
+  <summary>
+    JSON Output
+  </summary>
+
+```bash
+permguard zones delete --zone-id 273165098782 --output json
+```
+
+output:
+
+```json
+{
+  "zones": [
+    {
+      "zone_id": 273165098782,
+      "created_at": "2024-08-25T14:07:59.634Z",
+      "updated_at": "2024-08-25T14:07:59.634Z",
+      "name": "platform-admin-zone"
+    }
+  ]
+}
+```
+
+</details>
+
+## Update a Zone
+
+The `permguard zones update` command allows to update the name of an existing zone.
+The `--zone-id` flag is **required**.
+
+```bash
+permguard zones update --zone-id 273165098782 platform-admin-zone-v2
+```
+
+output:
+
+```bash
+ 273165098782: platform-admin-zone-v2
+```
+
+<details>
+  <summary>
+    JSON Output
+  </summary>
+
+```bash
+permguard zones update --zone-id 273165098782 platform-admin-zone-v2 --output json
+```
+
+output:
+
+```json
+{
+  "zones": [
+    {
+      "zone_id": 273165098782,
+      "created_at": "2024-08-25T14:07:59.634Z",
+      "updated_at": "2024-08-25T14:10:12.301Z",
+      "name": "platform-admin-zone-v2"
+    }
+  ]
+}
+```
+
+</details>
+
 ## Fetch Zones
 
 The `permguard zones list` command allows for the retrieval of all zones.
