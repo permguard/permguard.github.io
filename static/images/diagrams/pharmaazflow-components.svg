@@ -1,0 +1,179 @@
+<svg viewBox="0 0 1200 800" width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0d0d0d"/>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#777"/>
+    </marker>
+    <marker id="arr-dashed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- ══════════════════════════════════════════
+       CARD 1 — Platform Administration Zone
+       x=80, y=20, w=400, h=280
+  ══════════════════════════════════════════ -->
+  <rect x="80" y="20" width="400" height="280" rx="6"
+        fill="#1a1a1a" stroke="#555" stroke-width="1.5" stroke-dasharray="10,5"/>
+  <rect x="97" y="33" width="18" height="13" rx="2" fill="#888"/>
+  <path d="M100 33 A 6 6 0 0 1 112 33" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="121" y="46" font-family="Arial,sans-serif" font-size="12" font-weight="bold"
+        fill="white" letter-spacing="0.3">PLATFORM-ADMINISTRATION-ZONE</text>
+  <text x="97" y="68" font-family="Arial,sans-serif" font-size="11" font-style="italic"
+        fill="#ff4488">Zone ID: 836576733282</text>
+
+  <!-- Ledger cube — Card 1 -->
+  <polygon points="145,148 165,158 145,168 125,158" fill="#5a5a5a" stroke="#888" stroke-width="1"/>
+  <polygon points="125,158 145,168 145,192 125,182" fill="#383838" stroke="#888" stroke-width="1"/>
+  <polygon points="165,158 145,168 145,192 165,182" fill="#484848" stroke="#888" stroke-width="1"/>
+  <text x="145" y="210" font-family="Arial,sans-serif" font-size="10" font-style="italic"
+        fill="#ff4488" text-anchor="middle">Ledger: ROOT</text>
+
+  <!-- Platform Service cylinder -->
+  <ellipse cx="310" cy="148" rx="42" ry="12" fill="#ff3388"/>
+  <rect x="268" y="148" width="84" height="60" fill="#cc1166"/>
+  <ellipse cx="310" cy="208" rx="42" ry="12" fill="#aa0055"/>
+  <text x="310" y="236" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">PLATFORM</text>
+  <text x="310" y="250" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">SERVICE</text>
+
+  <!-- Roles LEFT of Card 1 -->
+  <path d="M18,100 A 22 22 0 0 1 62,100 Z" fill="#ff4488"/>
+  <rect x="12" y="98" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="40" y="126" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">PLATFORM</text>
+  <text x="40" y="138" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">ADMIN</text>
+  <!-- curved arrow: bows left -->
+  <path d="M64,110 Q48,140 80,162" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <path d="M18,210 A 22 22 0 0 1 62,210 Z" fill="#ff4488"/>
+  <rect x="12" y="208" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="40" y="236" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">BRANCH</text>
+  <text x="40" y="248" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">OWNER</text>
+  <!-- curved arrow: bows left -->
+  <path d="M64,214 Q48,200 80,192" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+
+  <!-- ══════════════════════════════════════════
+       CARD 2 — Operations Management Zone
+       x=555, y=20, w=465, h=280  (right edge: 1020)
+  ══════════════════════════════════════════ -->
+  <rect x="555" y="20" width="465" height="280" rx="6"
+        fill="#1a1a1a" stroke="#555" stroke-width="1.5" stroke-dasharray="10,5"/>
+  <rect x="572" y="33" width="18" height="13" rx="2" fill="#888"/>
+  <path d="M575 33 A 6 6 0 0 1 587 33" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="596" y="46" font-family="Arial,sans-serif" font-size="12" font-weight="bold"
+        fill="white" letter-spacing="0.3">OPERATIONS-MANAGEMENT-ZONE</text>
+  <text x="572" y="68" font-family="Arial,sans-serif" font-size="11" font-style="italic"
+        fill="#ff4488">Zone ID: 121820121075</text>
+
+  <!-- Ledger cube — Card 2 -->
+  <polygon points="600,148 620,158 600,168 580,158" fill="#5a5a5a" stroke="#888" stroke-width="1"/>
+  <polygon points="580,158 600,168 600,192 580,182" fill="#383838" stroke="#888" stroke-width="1"/>
+  <polygon points="620,158 600,168 600,192 620,182" fill="#484848" stroke="#888" stroke-width="1"/>
+  <text x="600" y="210" font-family="Arial,sans-serif" font-size="10" font-style="italic"
+        fill="#ff4488" text-anchor="middle">Ledger: ROOT</text>
+
+  <!-- Orders Service cylinder -->
+  <ellipse cx="720" cy="148" rx="42" ry="12" fill="#ff3388"/>
+  <rect x="678" y="148" width="84" height="60" fill="#cc1166"/>
+  <ellipse cx="720" cy="208" rx="42" ry="12" fill="#aa0055"/>
+  <text x="720" y="236" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">ORDERS</text>
+  <text x="720" y="250" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">SERVICE</text>
+
+  <!-- Inventory Service cylinder -->
+  <ellipse cx="890" cy="148" rx="42" ry="12" fill="#ff3388"/>
+  <rect x="848" y="148" width="84" height="60" fill="#cc1166"/>
+  <ellipse cx="890" cy="208" rx="42" ry="12" fill="#aa0055"/>
+  <text x="890" y="236" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">INVENTORY</text>
+  <text x="890" y="250" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">SERVICE</text>
+
+  <!-- Orders → Inventory arrow: arcs upward -->
+  <path d="M762,178 Q805,155 848,178" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Roles RIGHT of Card 2 (center x=1072, card right edge=1020) -->
+  <path d="M1050,90 A 22 22 0 0 1 1094,90 Z" fill="#ff4488"/>
+  <rect x="1044" y="88" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="1072" y="116" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">PHARMACIST</text>
+  <!-- curved arrow: bows right -->
+  <path d="M1046,100 Q1062,142 1020,178" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <path d="M1050,210 A 22 22 0 0 1 1094,210 Z" fill="#ff4488"/>
+  <rect x="1044" y="208" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="1072" y="236" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">INVENTORY</text>
+  <text x="1072" y="248" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">OPERATOR</text>
+  <!-- curved arrow: bows right -->
+  <path d="M1046,214 Q1062,210 1020,208" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+
+  <!-- ══════════════════════════════════════════
+       CARD 3 — Patient Services Zone
+       x=320, y=460, w=420, h=300  (right edge: 740)
+  ══════════════════════════════════════════ -->
+  <rect x="320" y="460" width="420" height="300" rx="6"
+        fill="#1a1a1a" stroke="#555" stroke-width="1.5" stroke-dasharray="10,5"/>
+  <rect x="337" y="473" width="18" height="13" rx="2" fill="#888"/>
+  <path d="M340 473 A 6 6 0 0 1 352 473" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="361" y="486" font-family="Arial,sans-serif" font-size="12" font-weight="bold"
+        fill="white" letter-spacing="0.3">PATIENT-SERVICES-ZONE</text>
+  <text x="337" y="508" font-family="Arial,sans-serif" font-size="11" font-style="italic"
+        fill="#ff4488">Zone ID: 927579003246</text>
+
+  <!-- Ledger cube — Card 3 -->
+  <polygon points="380,558 400,568 380,578 360,568" fill="#5a5a5a" stroke="#888" stroke-width="1"/>
+  <polygon points="360,568 380,578 380,602 360,592" fill="#383838" stroke="#888" stroke-width="1"/>
+  <polygon points="400,568 380,578 380,602 400,592" fill="#484848" stroke="#888" stroke-width="1"/>
+  <text x="380" y="620" font-family="Arial,sans-serif" font-size="10" font-style="italic"
+        fill="#ff4488" text-anchor="middle">Ledger: ROOT</text>
+
+  <!-- Prescriptions Service cylinder -->
+  <ellipse cx="580" cy="558" rx="42" ry="12" fill="#ff3388"/>
+  <rect x="538" y="558" width="84" height="60" fill="#cc1166"/>
+  <ellipse cx="580" cy="618" rx="42" ry="12" fill="#aa0055"/>
+  <text x="580" y="646" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">PRESCRIPTIONS</text>
+  <text x="580" y="660" font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+        fill="white" text-anchor="middle">SERVICE</text>
+
+  <!-- Role PATIENT (left of Card 3) -->
+  <path d="M238,558 A 22 22 0 0 1 282,558 Z" fill="#ff4488"/>
+  <rect x="232" y="556" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="260" y="584" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">PATIENT</text>
+  <!-- curved arrow: bows upward -->
+  <path d="M284,562 Q302,548 320,572" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Role PHARMACIST (right of Card 3) -->
+  <path d="M778,558 A 22 22 0 0 1 822,558 Z" fill="#ff4488"/>
+  <rect x="772" y="556" width="56" height="9" rx="4" fill="#ff4488"/>
+  <text x="800" y="584" font-family="Arial,sans-serif" font-size="10" font-weight="bold"
+        fill="white" text-anchor="middle">PHARMACIST</text>
+  <!-- curved arrow: bows upward -->
+  <path d="M776,562 Q758,548 740,572" fill="none"
+        stroke="#777" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Cross-zone dashed arrow: PRESCRIPTIONS SERVICE → ORDERS SERVICE -->
+  <path d="M590,460 Q640,370 720,300" fill="none"
+        stroke="#555" stroke-width="1.5" stroke-dasharray="6,4"
+        marker-end="url(#arr-dashed)"/>
+  <text x="634" y="392" font-family="Arial,sans-serif" font-size="10" fill="#888"
+        transform="rotate(-48,634,392)">cross-zone</text>
+</svg>

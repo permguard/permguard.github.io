@@ -6,49 +6,38 @@ sidebar_position: 9
 description: Learn about the PharmaGovFlow example
 ---
 
+<!-- markdownlint-disable MD024 -->
+
 The **PharmaGovFlow** example demonstrates how `Permguard` enforces **governance** — policy-based authorization — across the distinct trust boundaries of a pharmacy ecosystem.
 
-It shows how `users`, `workloads`, and `roles` interact within a Zero Trust governance model. This example focuses on **who can do what on which resources**, not on authority continuity (which is handled by the Trust Plane).
+It shows how `roles` and `workloads` interact within a Zero Trust governance model, focusing on **who can do what on which resources**.
 
-The example is intentionally simplified to highlight core governance concepts across **three main domains**:
+The ecosystem is modeled across **three domains**, each with its own trust boundary, zone, and ledger:
 
-- **Platform-Administration Domain**
-  Manages the pharmacy franchise: branches, teams, roles, and administrative operations.
-
-- **Operations-Management Domain**
-  Handles operational workflows: medication orders, fulfillment, stock levels, inventory and logistics.
-
-- **Patient-Services Domain**
-  Covers clinical workflows: patients, prescriptions, medication requests, dispensing, appointments, and notifications.
-
-Each domain represents its own bounded context (trusted boundary).
-In real-world environments, these domains would likely be further segmented, but here we keep the model intentionally simple.
-
-Therefore, each domain requires its own Permguard `zone` and a `root` ledger for managing policies.
+- **Platform-Administration Domain** — manages the pharmacy franchise: branches, teams, and role assignments.
+- **Operations-Management Domain** — handles operational workflows: medication orders, fulfillment, stock levels, and logistics.
+- **Patient-Services Domain** — covers clinical workflows: patients, prescriptions, medication requests, and dispensing.
 
 :::info
 Before proceeding, ensure the [CLI is installed](../../developers/getting-started/install-cli) and the [Server is running](../../developers/getting-started/run-server).
 :::
-
 
 ## Creating the Zones and Ledgers
 
 The first step is to **segment the trust boundaries** using `Permguard zones`, and create a dedicated `ledger` for each one.
 
 <div style={{textAlign: "center"}}>
-  <img alt="Permguard" src="/images/diagrams/pharmaazflow-segments.png" />
+  <img alt="Permguard" src="/images/diagrams/pharmaazflow-segments.svg" />
 </div>
 
 :::info
 Permguard conventionally names the main ledger of a zone `root`, representing the primary policy store of that zone.
 :::
 
-Let's create the zones and their `root` ledgers:
-
 ```text
-permguard zones create platform-admin-zone
+permguard zones create platform-administration-zone
 permguard authz ledgers create root --zone-id 836576733282
-permguard zones create pharmacy-management-zone
+permguard zones create operations-management-zone
 permguard authz ledgers create root --zone-id 121820121075
 permguard zones create patient-services-zone
 permguard authz ledgers create root --zone-id 927579003246
@@ -57,12 +46,12 @@ permguard authz ledgers create root --zone-id 927579003246
 Captured output.
 
 ```text
-❯ permguard zones create platform-admin-zone
-836576733282: platform-admin-zone
+❯ permguard zones create platform-administration-zone
+836576733282: platform-administration-zone
 ❯ permguard authz ledgers create root --zone-id 836576733282
 9c08015ca0fe46e9b0b54179cbd22bf3: root
-❯ permguard zones create pharmacy-management-zone
-121820121075: pharmacy-management-zone
+❯ permguard zones create operations-management-zone
+121820121075: operations-management-zone
 ❯ permguard authz ledgers create root --zone-id 121820121075
 a0d10339102c4690a8c13a01ac60cd74: root
 ❯ permguard zones create patient-services-zone
@@ -71,83 +60,41 @@ a0d10339102c4690a8c13a01ac60cd74: root
 b811788cde40438d90f062b9d5a7fd2c: root
 ```
 
-## Use Cases, Roles, and Architectural Components
+## Architecture Overview
 
-In this example, we implement **two main use cases**:
+The diagram below shows the roles, services, and cross-zone interactions for the two main use cases:
 
-1. **Branch Management**
-2. **Prescription and Medication Order Flow**
-
-Each use case spans multiple roles, services, and trusted zones within the PharmaGovFlow architecture.
+- **Branch Management** — administrative workflow for creating branches and assigning teams.
+- **Prescription & Medication Order Flow** — clinical workflow from prescription submission to stock verification.
 
 <div style={{textAlign: "center"}}>
-  <img alt="Permguard" src="/images/diagrams/pharmaazflow-components.png"/>
+  <img alt="Permguard" src="/images/diagrams/pharmaazflow-components.svg"/>
 </div>
 
-:::caution
-Although this example uses explicit roles (e.g. `platform-admin`, `branch-owner`, `pharmacist`) for clarity, **Permguard is not limited to role-based access control (RBAC)**.
+## Platform Administration Zone
 
-In real-world deployments it is possible to model rich authorization using **ABAC**. PharmaGovFlow is therefore a **didactic example**, not a limitation of what Permguard can express or enforce.
-:::
+This section walks through the full example for the `platform-administration-zone`: workspace setup, policy definition, apply, and authorization check.
 
-### 1. Branch Management
-
-This use case covers the administrative workflow of creating and managing pharmacy branches, teams, and roles.
-
-#### Description
-
-- A **Platform Admin** creates a new branch.
-- The **Platform Admin** assigns a **Branch Owner** to that branch.
-- The **Branch Owner** configures the local team and assigns roles such as *pharmacist* or *inventory-operator*.
-
-#### Roles
-
-| Role             | Description                                    |
-| ---------------- | ---------------------------------------------- |
-| `platform-admin` | Manages global franchise-level operations       |
-| `branch-owner`   | Manages branch-level team and role assignments  |
-
-#### Services & Zones
-
-| Zone                           | Service             | Purpose                                  |
-| ------------------------------ | ------------------- | ---------------------------------------- |
-| `platform-administration-zone` | `platform-service`  | Branch creation, user/role assignment    |
-
-### 2. Prescription & Medication Order Flow
-
-This use case covers the clinical workflow from prescription creation to medication ordering and stock verification.
-
-#### Description
-
-- A **Patient** submits a prescription request through the *Prescriptions Service*.
-- A **Pharmacist** reviews and validates the prescription.
-- Once validated, the *Prescriptions Service* initiates a medication order by calling the *Orders Service*.
-- The *Orders Service* checks item availability by querying the *Inventory Service* and temporarily reserves (locks) the medication.
-- The **Inventory Operator**, via the *Inventory Service*, reviews stock levels and, if needed, creates a replenishment order.
-
-#### Roles
-
-| Role                 | Description                                          |
-| -------------------- | ---------------------------------------------------- |
-| `patient`            | Requests prescriptions                               |
-| `pharmacist`         | Validates prescriptions and places medication orders |
-| `inventory-operator` | Verifies stock and handles inventory ordering        |
-
-#### Services & Zones
-
-| Zone                         | Service                 | Purpose                                 |
-| ---------------------------- | ----------------------- | --------------------------------------- |
-| `patient-services-zone`      | `prescriptions-service` | Handles prescription submissions        |
-| `operations-management-zone` | `orders-service`        | Orders medications from suppliers       |
-| `operations-management-zone` | `inventory-service`     | Checks and updates medication inventory |
-
-## Workspace Setup & Policy apply for the Platform Administration Zone
-
-In this step, the workspace is set up.
+The other two zones follow the same steps and are described in the [Out of Scope](#out-of-scope-zones) section below.
 
 :::info
 A workspace represents a local working space. Please refer to the [Learning Workspace](../../learn/workspaces/initialization) section for more information about the workspace.
 :::
+
+:::caution
+This example uses **roles** as the identity attribute (e.g. `role/platform-admin`, `role/branch-owner`) for simplicity.
+Permguard is not limited to role-based access control: it natively supports **ABAC** (attribute-based access control), where policies evaluate any attribute of the principal, resource, or context — such as department, clearance level, branch ID, or request origin.
+Roles are a special case of attributes, not a constraint of the model.
+:::
+
+### Roles
+
+| Role             | Description                                              |
+| ---------------- | -------------------------------------------------------- |
+| `platform-admin` | Full control over franchise-level branches               |
+| `branch-owner`   | Manages team and role assignments within their branch    |
+
+### Workspace Setup
 
 ```text
 mkdir -p ./platform-administration-zone && cd ./platform-administration-zone
@@ -159,47 +106,76 @@ permguard checkout origin/836576733282/root
 Captured output.
 
 ```text
-permguard remote add origin localhost
-permguard checkout origin/836576733282/root
+❯ mkdir -p ./platform-administration-zone && cd ./platform-administration-zone
+❯ permguard init --manifest --language cedar
 Initialized empty permguard ledger in '.'.
+❯ permguard remote add origin localhost
 Remote origin has been added.
+❯ permguard checkout origin/836576733282/root
 Ledger root has been added.
 The local workspace is already fully up to date with the remote ledger.
 ```
 
-Next, policies need to be created and applied to the `root` ledger of the `platform-administration-zone`.
-The very first step is to checkout the correct zone and ledger.
+### Policies
+
+The following six policies govern access to `Branch` resources within the platform administration domain.
+The Cedar namespace `PharmaGovFlow::Platform` identifies the resource and action types belonging to this zone.
+
+The `platform-admin` role has full lifecycle control over branches. The `branch-owner` role can assign and revoke team roles, but only on branches with `status == "active"` — a `when` condition that combines role-based and attribute-based rules in a single policy.
 
 ```sh
 cat << EOD > platform-policies.cedar
-@id("branch-administration")
+@id("branch-read-all")
 permit(
   principal == Permguard::Identity::Attribute::"role/platform-admin",
-  action in [ PharmaGovFlow::Platform::Action::"view", PharmaGovFlow::Platform::Action::"create",
-    PharmaGovFlow::Platform::Action::"update", PharmaGovFlow::Platform::Action::"delete"],
+  action == PharmaGovFlow::Platform::Action::"view",
   resource is PharmaGovFlow::Platform::Branch
 );
 
-@id("branch-team-management")
+@id("branch-create")
+permit(
+  principal == Permguard::Identity::Attribute::"role/platform-admin",
+  action == PharmaGovFlow::Platform::Action::"create",
+  resource is PharmaGovFlow::Platform::Branch
+);
+
+@id("branch-update")
+permit(
+  principal == Permguard::Identity::Attribute::"role/platform-admin",
+  action == PharmaGovFlow::Platform::Action::"update",
+  resource is PharmaGovFlow::Platform::Branch
+);
+
+@id("branch-deactivate")
+permit(
+  principal == Permguard::Identity::Attribute::"role/platform-admin",
+  action == PharmaGovFlow::Platform::Action::"deactivate",
+  resource is PharmaGovFlow::Platform::Branch
+);
+
+@id("branch-assign-role")
 permit(
   principal == Permguard::Identity::Attribute::"role/branch-owner",
   action == PharmaGovFlow::Platform::Action::"assign-role",
   resource is PharmaGovFlow::Platform::Branch
-);
+)
+when {
+  resource.status == "active"
+};
+
+@id("branch-revoke-role")
+permit(
+  principal == Permguard::Identity::Attribute::"role/branch-owner",
+  action == PharmaGovFlow::Platform::Action::"revoke-role",
+  resource is PharmaGovFlow::Platform::Branch
+)
+when {
+  resource.status == "active"
+};
 EOD
 ```
 
-Captured output.
-
-```text
-permguard checkout origin/836576733282/root
-Initialized empty permguard ledger in '.'.
-Remote origin has been added.
-Ledger root has been added.
-The local workspace is already fully up to date with the remote ledger.
-```
-
-At this stage it is time to apply changes to the `root` ledger of the `platform-administration-zone`.
+### Apply Changes
 
 ```text
 permguard apply
@@ -213,21 +189,29 @@ Initiating the planning process for ledger head/836576733282/9c08015ca0fe46e9b0b
 Planning process completed successfully.
 The following changes have been identified and are ready to be applied:
 
-        + / bafyreihpffvdnop3wimguocylm76ryn5kyzxwzfykq73lkvmxl47imnssu branch-administration
-        + / bafyreicbpzgtgil3pit5yf24jfbkzbgjzdpxpn4aztuzcfg4fc4mi3zasi branch-team-management
+        + / bafyreihpffvdnop3wimguocylm76ryn5kyzxwzfykq73lkvmxl47imnssu branch-read-all
+        + / bafyreicbpzgtgil3pit5yf24jfbkzbgjzdpxpn4aztuzcfg4fc4mi3zasi branch-create
+        + / bafyreiap3nqh7kzlmvc2wvhxqjhd7ry5p2xobtef4nkr6z3fxvpwb4syui branch-update
+        + / bafyreib4lmtxkjqrp5uv6oygz2d3cwfnh8ea7kqvswlitd5fxmp9e3n2ja branch-deactivate
+        + / bafyreid8qnwjhxcvmlpk3a5o2gft6rey4znsuw7bdqivmc9e3tpl7kxf4a branch-assign-role
+        + / bafyreif2zsxhvnkg4qpj7lbwt3md5coru8eay6nvkqdi9xfjp1we5zvqm4 branch-revoke-role
 
-unchanged 0, created 2, modified 0, deleted 0
+unchanged 0, created 6, modified 0, deleted 0
 
 Initiating the apply process for ledger head/836576733282/9c08015ca0fe46e9b0b54179cbd22bf3.
 Apply process completed successfully.
 Your workspace is synchronized with the remote ledger: head/836576733282/9c08015ca0fe46e9b0b54179cbd22bf3.
 ```
 
-Policies have now been applied and it is time to perform an authorization check.
+### Authorization Check
 
 :::info
 Please refer to the [Command Line](../../command-line/authz/check) section for more information about the available commands.
 :::
+
+In this scenario, the `platform-service` is running an **async job** that acts on behalf of a `branch-owner`: it needs to assign a role on a branch.
+The workload is identified by its own SPIFFE certificate (`principal`), while the role it is exercising is carried as the `subject`.
+This separation is key: the cryptographic identity of the executor and the business role it acts under are two distinct concepts in Permguard.
 
 ```sh
 cat << EOD > request.json
@@ -240,7 +224,7 @@ cat << EOD > request.json
     },
     "principal": {
       "type": "workload",
-      "id": "spiffe://edge.example.com/workload/64ad91fec7b0403eaf5d37e56c14ba42",
+      "id": "spiffe://edge.example.com/workload/platform-service",
       "source": "spire"
     }
   },
@@ -251,7 +235,10 @@ cat << EOD > request.json
   },
   "resource": {
     "type": "PharmaGovFlow::Platform::Branch",
-    "id": "fb008a600df04b21841c4fb5ad27ddf7"
+    "id": "fb008a600df04b21841c4fb5ad27ddf7",
+    "attributes": {
+      "status": "active"
+    }
   },
   "action": {
     "name": "PharmaGovFlow::Platform::Action::assign-role"
@@ -264,7 +251,7 @@ EOD
 permguard authz check ./request.json -o json
 ```
 
-Here’s what gets returned.
+Here's what gets returned.
 
 ```json
 ❯ permguard authz check ./request.json -o json  | jq
@@ -288,81 +275,80 @@ Here’s what gets returned.
 }
 ```
 
+## Out of Scope Zones
+
+The `operations-management-zone` and `patient-services-zone` follow the same workflow: workspace init, checkout, policy file, apply, and check.
+They are not walked through here to keep the example focused. The policy design for each zone is summarized below as a reference.
+
+### Operations Management Zone
+
+**Namespace:** `PharmaGovFlow::Operations` · **Zone ID:** `121820121075`
+
+**Roles:**
+
+| Role                 | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| `pharmacist`         | Creates and approves medication orders              |
+| `inventory-operator` | Manages stock levels and opens replenishment orders |
+
+**Resources:**
+
+| Resource          | Attributes                                          |
+| ----------------- | --------------------------------------------------- |
+| `MedicationOrder` | `status`: pending \| approved \| fulfilled          |
+| `InventoryItem`   | `quantity_available`, `reorder_threshold`           |
+
+**Policies:**
+
+| Policy ID                        | Principal                          | Action               | Resource        | Condition                                 |
+| -------------------------------- | ---------------------------------- | -------------------- | --------------- | ----------------------------------------- |
+| `medication-order-read`          | `pharmacist`                       | view                 | MedicationOrder | —                                         |
+| `medication-order-create`        | `pharmacist`                       | create               | MedicationOrder | `status != "fulfilled"`                   |
+| `medication-order-approve`       | `pharmacist`                       | approve              | MedicationOrder | `status == "pending"`                     |
+| `inventory-read-update`          | `inventory-operator`               | view, update         | InventoryItem   | —                                         |
+| `inventory-replenishment-order`  | `inventory-operator`               | create-replenishment | InventoryItem   | `quantity_available <= reorder_threshold` |
+| `service-order-creation`         | workload `prescriptions-service`   | create               | MedicationOrder | cross-zone from `patient-services`        |
+
+### Patient Services Zone
+
+**Namespace:** `PharmaGovFlow::PatientServices` · **Zone ID:** `927579003246`
+
+**Roles:**
+
+| Role         | Description                                     |
+| ------------ | ----------------------------------------------- |
+| `patient`    | Submits and tracks their own prescriptions      |
+| `pharmacist` | Validates or rejects pending prescriptions      |
+
+**Resources:**
+
+| Resource       | Attributes                                              |
+| -------------- | ------------------------------------------------------- |
+| `Prescription` | `status`: draft \| pending \| validated \| rejected     |
+
+**Policies:**
+
+| Policy ID                 | Principal    | Action   | Resource     | Condition              |
+| ------------------------- | ------------ | -------- | ------------ | ---------------------- |
+| `prescription-create`     | `patient`    | create   | Prescription | —                      |
+| `prescription-read-own`   | `patient`    | view     | Prescription | —                      |
+| `prescription-edit-draft` | `patient`    | update   | Prescription | `status == "draft"`    |
+| `prescription-read-all`   | `pharmacist` | view     | Prescription | —                      |
+| `prescription-validate`   | `pharmacist` | validate | Prescription | `status == "pending"`  |
+| `prescription-reject`     | `pharmacist` | reject   | Prescription | `status == "pending"`  |
+
 ## Next Steps
 
-This example demonstrates how to set up the `PharmaGovFlow` playground and perform an authorization check.
+This example demonstrates how to configure a zone, define Cedar policies with role-based and attribute-based conditions, and verify authorization decisions with `permguard authz check`.
 
-To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
+To better understand the policy store internals, explore the Ledger's Git-like object storage.
 
 :::info
 Please refer to the [Command Line Objects](../../command-line/workspace/objects) section for more information about the available commands.
 :::
-
-Below is an example of how to list all objects in the workspace.
-
-```text
-permguard objects --all
-```
-
-Output shown below.
-
-```text
-❯ permguard objects --all
-Your workspace objects:
-
-	- bafyreiaxjt6n6iynim5uogbz3uxis53lhov5f3fgpogbdsccae6jziep7a tree
-	- bafyreia7vd3xbmmoja7wml5tnexgw663ktdeuhihdnz4pfy2dcvgon54we blob platform-administration
-	- bafyreihhoz6dw4eh4cq7nvw25r6ri4eksadvqnyi2qnpzfiol2rtxenufa commit
-	- bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm blob branch-administration
-
-total 4, commit 1, tree 1, blob 2
-```
-
-The following example shows how to display the content of the `branch-administration` object.
-
-```text
-permguard objects cat bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm
-```
-
-Displayed output.
-
-```text
-❯ permguard objects cat bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm
-
-Your workspace object bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm:
-
-{"annotations":{"id":"branch-administration"},"effect":"permit","principal":{"op":"==","entity":{"type":"Permguard::Identity::Attribute","id":"role/branch-owner"}},"action":{"op":"==","entity":{"type":"PharmaGovFlow::Platform::Action","id":"assign-role"}},"resource":{"op":"is","entity_type":"PharmaGovFlow::Platform::Subscription"}}
-
-type blob, size 397, oname branch-administration
-```
-
-It is also possible to specify the `frontend` option to display the object in a more readable format.
-
-```text
-permguard objects cat bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm --frontend
-```
-
-Here’s the result.
-
-```text
-❯ permguard objects cat bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm --frontend
-
-Your workspace object bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm:
-
-@id("branch-administration")
-permit (
-    principal == Permguard::Identity::Attribute::"role/branch-owner",
-    action == PharmaGovFlow::Platform::Action::"assign-role",
-    resource is PharmaGovFlow::Platform::Subscription
-);
-
-type blob, size 397, oname branch-administration
-```
 
 It is recommended to explore the [Policy as Code](../../data-plane/policy-as-code/policy-languages) section to learn more about the policy store and the policy language.
 
 :::info
 Please refer to the [Deployment Options](../../developers/deployment/options) section for more information about configuration and deployment.
 :::
-
-Finally, it is worth considering how to deploy the Server.
