@@ -61,7 +61,7 @@ principal = PrincipalBuilder("amy.smith@acmecorp.com").build()
 
 entities = [
     {
-        "uid": {"type": "Root::Platform::BranchInfo", "id": "subscription"},
+        "uid": {"type": "PharmaGovFlow::Platform::BranchInfo", "id": "subscription"},
         "attrs": {"active": True},
         "parents": [],
     }
@@ -72,8 +72,8 @@ req = (
         895741663247,
         "809257ed202e40cab7e958218eecad20",
         "platform-creator",
-        "Root::Platform::Subscription",
-        "Root::Platform::Action::create",
+        "PharmaGovFlow::Platform::Subscription",
+        "PharmaGovFlow::Platform::Action::create",
     )
     .with_request_id("1234")
     .with_principal(principal)
@@ -133,14 +133,14 @@ subject = (
 )
 
 resource = (
-    ResourceBuilder("Root::Platform::Subscription")
+    ResourceBuilder("PharmaGovFlow::Platform::Subscription")
     .with_id("e3a786fd07e24bfa95ba4341d3695ae8")
     .with_property("isEnabled", True)
     .build()
 )
 
-action_view = ActionBuilder("Root::Platform::Action::view").with_property("isEnabled", True).build()
-action_create = ActionBuilder("Root::Platform::Action::create").with_property("isEnabled", True).build()
+action_view = ActionBuilder("PharmaGovFlow::Platform::Action::view").with_property("isEnabled", True).build()
+action_create = ActionBuilder("PharmaGovFlow::Platform::Action::create").with_property("isEnabled", True).build()
 
 context = (
     ContextBuilder()
@@ -156,7 +156,7 @@ principal = PrincipalBuilder("amy.smith@acmecorp.com").build()
 
 entities = [
     {
-        "uid": {"type": "Root::Platform::BranchInfo", "id": "subscription"},
+        "uid": {"type": "PharmaGovFlow::Platform::BranchInfo", "id": "subscription"},
         "attrs": {"active": True},
         "parents": [],
     }

@@ -9,7 +9,7 @@ description: Understanding the concept of Policy in Permguard.
 In **Permguard**, multiple ledgers can be created, and each ledger can have multiple **policies**.
 
 :::note
-In the [Root base example](../../../learn/pharma-govflow/) policies such as **`platform-manager`** are created.
+In the [PharmaGovFlow example](../../../learn/pharma-govflow/) policies such as **`platform-manager`** are created.
 :::
 
 ## Policy

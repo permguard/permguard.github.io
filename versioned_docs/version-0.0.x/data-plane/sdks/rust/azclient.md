@@ -71,7 +71,7 @@ An `atomic authorization` request can be performed using the `AuthZClient` by cr
     let entity = {
         let mut map = HashMap::new();
         map.insert("uid".to_string(), json!({
-            "type": "Root::Platform::BranchInfo",
+            "type": "PharmaGovFlow::Platform::BranchInfo",
             "id": "subscription"
         }));
         map.insert("attrs".to_string(), json!({"active": true}));
@@ -85,8 +85,8 @@ An `atomic authorization` request can be performed using the `AuthZClient` by cr
         189106194833,
         "48335ae72b3b405eae9e4bd5b07732df",
         "platform-creator",
-        "Root::Platform::Subscription",
-        "Root::Platform::Action::create",
+        "PharmaGovFlow::Platform::Subscription",
+        "PharmaGovFlow::Platform::Action::create",
     )
         .with_request_id("31243")
         .with_principal(principal)
@@ -143,17 +143,17 @@ This type of request is designed for scenarios requiring greater control over th
         .build();
 
     // Create a new resource
-    let resource = ResourceBuilder::new("Root::Platform::Subscription")
+    let resource = ResourceBuilder::new("PharmaGovFlow::Platform::Subscription")
         .with_id("e3a786fd07e24bfa95ba4341d3695ae8")
         .with_property("isEnabled", serde_json::json!(true))
         .build();
 
     // Create actions
-    let action_view = ActionBuilder::new("Root::Platform::Action::create")
+    let action_view = ActionBuilder::new("PharmaGovFlow::Platform::Action::create")
         .with_property("isEnabled", serde_json::json!(true))
         .build();
 
-    let action_create = ActionBuilder::new("Root::Platform::Action::create")
+    let action_create = ActionBuilder::new("PharmaGovFlow::Platform::Action::create")
         .with_property("isEnabled", serde_json::json!(false))
         .build();
 
@@ -177,7 +177,7 @@ This type of request is designed for scenarios requiring greater control over th
     entity.insert(
         "uid".to_string(),
         serde_json::json!({
-            "type": "Root::Platform::BranchInfo",
+            "type": "PharmaGovFlow::Platform::BranchInfo",
             "id": "subscription"
         }),
     );

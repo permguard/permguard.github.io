@@ -1,12 +1,12 @@
 ---
 id: pharma-govflow
-title: Root Sample
-sidebar_label: Root Sample
+title: PharmaGovFlow
+sidebar_label: PharmaGovFlow
 sidebar_position: 9
-description: Learn about the Root example
+description: Learn about the PharmaGovFlow example
 ---
 
-The **Root** example demonstrates how `Permguard` enforces **governance** — policy-based authorization — across the distinct trust boundaries of a pharmacy ecosystem.
+The **PharmaGovFlow** example demonstrates how `Permguard` enforces **governance** — policy-based authorization — across the distinct trust boundaries of a pharmacy ecosystem.
 
 It shows how `users`, `workloads`, and `roles` interact within a Zero Trust governance model. This example focuses on **who can do what on which resources**, not on authority continuity (which is handled by the Trust Plane).
 
@@ -78,7 +78,7 @@ In this example, we implement **two main use cases**:
 1. **Branch Management**
 2. **Prescription and Medication Order Flow**
 
-Each use case spans multiple roles, services, and trusted zones within the Root architecture.
+Each use case spans multiple roles, services, and trusted zones within the PharmaGovFlow architecture.
 
 <div style={{textAlign: "center"}}>
   <img alt="Permguard" src="/images/diagrams/pharmaazflow-components.png"/>
@@ -87,7 +87,7 @@ Each use case spans multiple roles, services, and trusted zones within the Root 
 :::caution
 Although this example uses explicit roles (e.g. `platform-admin`, `branch-owner`, `pharmacist`) for clarity, **Permguard is not limited to role-based access control (RBAC)**.
 
-In real-world deployments it is possible to model rich authorization using **ABAC**. Root is therefore a **didactic example**, not a limitation of what Permguard can express or enforce.
+In real-world deployments it is possible to model rich authorization using **ABAC**. PharmaGovFlow is therefore a **didactic example**, not a limitation of what Permguard can express or enforce.
 :::
 
 ### 1. Branch Management
@@ -175,16 +175,16 @@ cat << EOD > platform-policies.cedar
 @id("branch-administration")
 permit(
   principal == Permguard::Identity::Attribute::"role/platform-admin",
-  action in [ Root::Platform::Action::"view", Root::Platform::Action::"create",
-    Root::Platform::Action::"update", Root::Platform::Action::"delete"],
-  resource is Root::Platform::Branch
+  action in [ PharmaGovFlow::Platform::Action::"view", PharmaGovFlow::Platform::Action::"create",
+    PharmaGovFlow::Platform::Action::"update", PharmaGovFlow::Platform::Action::"delete"],
+  resource is PharmaGovFlow::Platform::Branch
 );
 
 @id("branch-team-management")
 permit(
   principal == Permguard::Identity::Attribute::"role/branch-owner",
-  action == Root::Platform::Action::"assign-role",
-  resource is Root::Platform::Branch
+  action == PharmaGovFlow::Platform::Action::"assign-role",
+  resource is PharmaGovFlow::Platform::Branch
 );
 EOD
 ```
@@ -250,11 +250,11 @@ cat << EOD > request.json
     "id": "role/branch-owner"
   },
   "resource": {
-    "type": "Root::Platform::Branch",
+    "type": "PharmaGovFlow::Platform::Branch",
     "id": "fb008a600df04b21841c4fb5ad27ddf7"
   },
   "action": {
-    "name": "Root::Platform::Action::assign-role"
+    "name": "PharmaGovFlow::Platform::Action::assign-role"
   }
 }
 EOD
@@ -290,7 +290,7 @@ Here’s what gets returned.
 
 ## Next Steps
 
-This example demonstrates how to set up the `Root` playground and perform an authorization check.
+This example demonstrates how to set up the `PharmaGovFlow` playground and perform an authorization check.
 
 To better understand Permguard, it is worth exploring the Policy Store, which is implemented as a Ledger. The Ledger uses a Git-like object storage system.
 
@@ -331,7 +331,7 @@ Displayed output.
 
 Your workspace object bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgkm:
 
-{"annotations":{"id":"branch-administration"},"effect":"permit","principal":{"op":"==","entity":{"type":"Permguard::Identity::Attribute","id":"role/branch-owner"}},"action":{"op":"==","entity":{"type":"Root::Platform::Action","id":"assign-role"}},"resource":{"op":"is","entity_type":"Root::Platform::Subscription"}}
+{"annotations":{"id":"branch-administration"},"effect":"permit","principal":{"op":"==","entity":{"type":"Permguard::Identity::Attribute","id":"role/branch-owner"}},"action":{"op":"==","entity":{"type":"PharmaGovFlow::Platform::Action","id":"assign-role"}},"resource":{"op":"is","entity_type":"PharmaGovFlow::Platform::Subscription"}}
 
 type blob, size 397, oname branch-administration
 ```
@@ -352,8 +352,8 @@ Your workspace object bafyreif366mwe3cl43zarhiyrbd7fcciqrhpmvo7he3apipvndop6uxgk
 @id("branch-administration")
 permit (
     principal == Permguard::Identity::Attribute::"role/branch-owner",
-    action == Root::Platform::Action::"assign-role",
-    resource is Root::Platform::Subscription
+    action == PharmaGovFlow::Platform::Action::"assign-role",
+    resource is PharmaGovFlow::Platform::Subscription
 );
 
 type blob, size 397, oname branch-administration

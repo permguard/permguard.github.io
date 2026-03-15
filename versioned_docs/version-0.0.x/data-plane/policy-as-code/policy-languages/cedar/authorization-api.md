@@ -27,7 +27,7 @@ The `Entities` object is a `set of attributes` that represent policy's entities.
       "items": [
         {
           "uid": {
-            "type": "Root::Platform::Subscription",
+            "type": "PharmaGovFlow::Platform::Subscription",
             "id": "e3a786fd07e24bfa95ba4341d3695ae8"
           },
           "attrs": {
@@ -71,7 +71,7 @@ The `Resource` has to satisfy the `Cedar` resource structure.
 ```cedar
 @id("platform-auditor")
 permit(
-  resource is Root::Platform::Subscription
+  resource is PharmaGovFlow::Platform::Subscription
 );
 ```
 
@@ -82,6 +82,6 @@ The `Action` has to satisfy the `Cedar` action structure.
 ```cedar
 @id("platform-auditor")
 permit(
-  action == Root::Platform::Action::"view",
+  action == PharmaGovFlow::Platform::Action::"view",
 );
 ```

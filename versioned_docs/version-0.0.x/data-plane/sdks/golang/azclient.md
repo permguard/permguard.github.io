@@ -21,7 +21,7 @@ azClient := permguard.NewAZClient(
 
 // Create a new authorization request
 req := azreq.NewAZAtomicRequestBuilder(273165098782, "fd1ac44e4afa4fc4beec622494d3175a",
-  "amy.smith@acmecorp.com", "Root::Platform::Subscription", "Root::Platform::Action::create")
+  "amy.smith@acmecorp.com", "PharmaGovFlow::Platform::Subscription", "PharmaGovFlow::Platform::Action::create")
 
 // Check the authorization
 decision, _, _ := azClient.Check(req)
@@ -49,7 +49,7 @@ principal := azreq.NewPrincipalBuilder("amy.smith@acmecorp.com").Build()
 entities := []map[string]any{
   {
       "uid": map[string]any{
-      "type": "Root::Platform::BranchInfo",
+      "type": "PharmaGovFlow::Platform::BranchInfo",
       "id":   "subscription",
       },
       "attrs": map[string]any{
@@ -61,7 +61,7 @@ entities := []map[string]any{
 
 // Create a new authorization request
 req := azreq.NewAZAtomicRequestBuilder(273165098782, "fd1ac44e4afa4fc4beec622494d3175a",
-  "amy.smith@acmecorp.com", "Root::Platform::Subscription", "Root::Platform::Action::create").
+  "amy.smith@acmecorp.com", "PharmaGovFlow::Platform::Subscription", "PharmaGovFlow::Platform::Action::create").
   // RequestID
   WithRequestID("1234").
   // Principal
@@ -124,17 +124,17 @@ subject := azreq.NewSubjectBuilder("amy.smith@acmecorp.com").
   Build()
 
 // Create a new resource
-resource := azreq.NewResourceBuilder("Root::Platform::Subscription").
+resource := azreq.NewResourceBuilder("PharmaGovFlow::Platform::Subscription").
   WithID("e3a786fd07e24bfa95ba4341d3695ae8").
   WithProperty("isEnabled", true).
   Build()
 
 // Create actions
-actionView := azreq.NewActionBuilder("Root::Platform::Action::create").
+actionView := azreq.NewActionBuilder("PharmaGovFlow::Platform::Action::create").
   WithProperty("isEnabled", true).
   Build()
 
-actionCreate := azreq.NewActionBuilder("Root::Platform::Action::create").
+actionCreate := azreq.NewActionBuilder("PharmaGovFlow::Platform::Action::create").
   WithProperty("isEnabled", true).
   Build()
 
@@ -162,7 +162,7 @@ principal := azreq.NewPrincipalBuilder("amy.smith@acmecorp.com").Build()
 entities := []map[string]any{
   {
     "uid": map[string]any{
-      "type": "Root::Platform::BranchInfo",
+      "type": "PharmaGovFlow::Platform::BranchInfo",
       "id":   "subscription",
     },
     "attrs": map[string]any{

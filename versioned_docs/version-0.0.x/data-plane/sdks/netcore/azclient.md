@@ -102,7 +102,7 @@ try
         {
             { "uid", new Dictionary<string,object>
                 {
-                    { "type", "Root::Platform::BranchInfo" },
+                    { "type", "PharmaGovFlow::Platform::BranchInfo" },
                     { "id", "subscription" }
                 }
             },
@@ -115,8 +115,8 @@ try
     var request = new AzAtomicRequestBuilder(285374414806,
             "f81aec177f8a44a48b7ceee45e05507f",
             "platform-creator",
-            "Root::Platform::Subscription",
-            "Root::Platform::Action::create")
+            "PharmaGovFlow::Platform::Subscription",
+            "PharmaGovFlow::Platform::Action::create")
         // RequestID
         .WithRequestId("31243")
         // Principal
@@ -213,17 +213,17 @@ try
         .Build();
 
     // Create a new resource
-    var resource = new ResourceBuilder("Root::Platform::Subscription")
+    var resource = new ResourceBuilder("PharmaGovFlow::Platform::Subscription")
         .WithId("e3a786fd07e24bfa95ba4341d3695ae8")
         .WithProperty("isEnabled", true)
         .Build();
 
     // Create actions
-    var actionView = new ActionBuilder("Root::Platform::Action::create")
+    var actionView = new ActionBuilder("PharmaGovFlow::Platform::Action::create")
         .WithProperty("isEnabled", true)
         .Build();
 
-    var actionCreate = new ActionBuilder("Root::Platform::Action::create")
+    var actionCreate = new ActionBuilder("PharmaGovFlow::Platform::Action::create")
         .WithProperty("isEnabled", false)
         .Build();
 
@@ -249,7 +249,7 @@ try
         {
             { "uid", new Dictionary<string,object>
                 {
-                    { "type", "Root::Platform::BranchInfo" },
+                    { "type", "PharmaGovFlow::Platform::BranchInfo" },
                     { "id", "subscription" }
                 }
             },
